@@ -7,7 +7,7 @@
 				<ul class="card">
 					<li><a href="wishlist.jsp" ><i class="fa fa-heart" aria-hidden="true"></i>MyPage</a></li>
 					<li><a href="login.jsp" ><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
-					<li><a href="register.jsp" ><i class="fa fa-arrow-right" aria-hidden="true"></i>회원가입</a></li>
+					<li><a href="register.jsp" ><i class="fa fa-arrow-right" aria-hidden="true"></i>회원가입</a></li>
 				
 					<nav class="navbar navbar-default">
 					<div class="navbar-header nav_2">
