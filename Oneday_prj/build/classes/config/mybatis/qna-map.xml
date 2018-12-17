@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!--  
-<mapper namespace="userNameSpace">
-<mapper namespace="com.biz.mapper">
- -->
+
 <mapper namespace="qnaNameSpace">
 
+   <resultMap id="qnaMap" type="com.oneday.faq.FaqVO">
+      <id property="oSeq" column="o_seq" />
+      <result property="q_seq" column="q_seq" />
+      <result property="qm_seq" column="qm_seq" />
+      <result property="q_gubun" column="q_gubun" />
+      <result property="q_title" column="q_title" />
+      <result property="q_content" column="q_content" />
+      <result property="q_secret" column="q_secret" />
+      <result property="q_regdate" column="q_regdate" />
+      <result property="a_seq" column="a_seq" />
+      <result property="am_seq" column="am_seq" />
+      <result property="a_regdate" column="a_regdate" />
+	</resultMap>
 <!--  <resultMap id="sp_11" type="com.jang.order.orderVO" extends="orderMap">
       <association property="plist" resultMap="shopPicMap"></association>
    </resultMap>
@@ -22,27 +32,34 @@
       <collection property="rlist" resultMap="shopReplyMap"></collection>
    </resultMap> -->
 
-   <resultMap id="placeMap" type="com.oneday.place.PlaceVO">
-      <id property="pSeq" column="p_seq" />
-      <result property="pTitle" column="p_title" />
-      <result property="pContent" column="p_content" />
-      <result property="pLat" column="p_lat" />
-      <result property="pLng" column="p_lng" />
-      <result property="pArea" column="p_area" />
-      <result property="pCost" column="p_cost" />
-      <result property="pInout" column="p_inout" />
-      <result property="pPurpose" column="p_purpose" />
-      <result property="mSeq" column="m_seq" />
-      <result property="pRegdate" column="p_regdate" />
-      <result property="pPpath" column="p_ppath" />
-      <result property="pPname" column="p_pname" />
-      <result property="pSysname" column="p_sysname" />
-   </resultMap>
    
-    <!-- <sql id="commonSelect">user_name, user_gubun</sql> -->
+
+<!--    <resultMap id="shopPicMap" type="com.biz.shop.ShopPicVO">
+      <id property="pseq" column="pseq" />
+      <result property="ppath" column="ppath" />
+      <result property="pname" column="pname" />
+      <result property="sysname" column="syspname" />
+      <result property="sseq" column="sseq" />
+      <result property="pchk_yn" column="pchk_yn" /> 
+   </resultMap>
+
+   <resultMap id="shopReplyMap" type="com.biz.shop.ReplyVO">
+      <id property="rseq" column="rseq" />
+      <result property="reply" column="reply" />
+      <result property="regid" column="regid" />
+      <result property="regdate" column="regdate" />
+      <result property="sseq" column="sseq" />
+   </resultMap>
+ -->
+
+    <!-- <sql id="commonSelect">user_name, user_gubun</sql>  -->
+
+
     
-    <select id="selectPlace" resultMap="placeMap">
-      select * from place
-    </select>
+
+    <select id="question_select" parameterType="com.oneday.faq.FaqVO" resultMap="qnaMap">
+      select *
+      from question
+	</select>
    
 </mapper>   
