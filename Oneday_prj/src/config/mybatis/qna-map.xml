@@ -1,40 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!--  
-<mapper namespace="userNameSpace">
-<mapper namespace="com.biz.mapper">
- -->
+
 <mapper namespace="qnaNameSpace">
 
-<!--  <resultMap id="sp_11" type="com.jang.order.orderVO" extends="orderMap">
-      <association property="plist" resultMap="shopPicMap"></association>
-   </resultMap>
-   
-    <resultMap id="sp_1n" type="com.jang.order.orderVO" extends="orderMap">
-       <collection property="plist" resultMap="shopPicMap"></collection>
-   </resultMap>
-   
-    
-   
-    <resultMap id="spr_1nn" type="com.biz.shop.ShopVO" extends="shopMap">
-      <collection property="plist" resultMap="shopPicMap"></collection>
-      <collection property="rlist" resultMap="shopReplyMap"></collection>
-   </resultMap> -->
-
-   <resultMap id="orderMap" type="com.jang.order.orderVO">
+   <resultMap id="qnaMap" type="com.oneday.faq.FaqVO">
       <id property="oSeq" column="o_seq" />
-      <result property="oTitle" column="o_title" />
-      <result property="oRegdate" column="o_regdate" />
-      <result property="oText" column="o_text" />
-      <result property="oPoint" column="o_point" />
-      <result property="oPicture" column="o_picture" />
-      <result property="mSeq" column="m_seq" />
-      <result property="oAddress" column="o_address" />
-      <result property="oLat" column="o_lat" />
-      <result property="oLng" column="o_lng" />
-      <result property="kSeq" column="k_seq" />
-      <result property="orderGubun" column="order_gubun" />
+      <result property="q_seq" column="q_seq" />
+      <result property="qm_seq" column="qm_seq" />
+      <result property="q_gubun" column="q_gubun" />
+      <result property="q_title" column="q_title" />
+      <result property="q_content" column="q_content" />
+      <result property="q_secret" column="q_secret" />
+      <result property="q_regdate" column="q_regdate" />
+      <result property="a_seq" column="a_seq" />
+      <result property="am_seq" column="am_seq" />
+      <result property="a_regdate" column="a_regdate" />
    </resultMap>
    
 <!--    <resultMap id="shopPicMap" type="com.biz.shop.ShopPicVO">
@@ -55,11 +36,11 @@
    </resultMap>
  -->
 
-    <sql id="commonSelect">user_name, user_gubun</sql>
+    <!-- <sql id="commonSelect">user_name, user_gubun</sql>  -->
     
-    <select id="orderAll" resultMap="orderMap">
+    <select id="question_select" parameterType="com.oneday.faq.FaqVO" resultMap="qnaMap">
       select *
-      from order_board
+      from question
     </select>
     
    

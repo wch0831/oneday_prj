@@ -5,12 +5,12 @@
     <param-name>COMMON</param-name>
     <param-value>200ok</param-value>
   </context-param>
-<!-- <servlet>
-    <servlet-name>MyBatisFactory</servlet-name>
-    <servlet-class>com.biz.common.MyBatisFactory</servlet-class>
+ <servlet>
+    <servlet-name>mybatisFactory</servlet-name>
+    <servlet-class>com.oneday.common.MyBatisFactory</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
-  <filter>
+  <!-- <filter>
     <filter-name>mySessionCheckFilter</filter-name>
     <filter-class>com.biz.common.SessionCheckFilter</filter-class>
     <init-param>
@@ -21,8 +21,8 @@
   <filter-mapping>
     <filter-name>mySessionCheckFilter</filter-name>
     <url-pattern>/*</url-pattern>
-  </filter-mapping>
-<servlet-mapping>
+  </filter-mapping> -->
+<!--   <servlet-mapping>
     <servlet-name>MyBatisFactory</servlet-name>
     <url-pattern>/mybatis</url-pattern>
   </servlet-mapping> -->
