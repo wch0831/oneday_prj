@@ -15,7 +15,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <a href="offer.html"><img src="images/download.png" class="img-head" alt=""></a>
 
 
-<%@ include file="/include/top2.jsp" %>
+<%@ include file="/include/top.jsp" %>
   <!---->
 
     <!--banner-->
