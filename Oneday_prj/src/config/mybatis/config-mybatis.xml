@@ -5,8 +5,15 @@
 	
 	<properties resource="config/mybatis/oracle.properties" />
 		 
+		 
+	<settings>
+        <setting name="cacheEnabled" value="false" />
+        <setting name="jdbcTypeForNull" value="NULL" />
+    </settings>
+	
 	<typeAliases>
-		<typeAlias alias="orderVO" type="com.jang.order.orderVO"  />
+		<!-- 예시용 문경이네
+		<typeAlias alias="orderVO" type="com.jang.order.orderVO"  /> -->
 	</typeAliases>
 		
 	<environments default="development">
@@ -22,7 +29,10 @@
 	</environments>
 		
 	<mappers>
-		<mapper resource="config/mybatis/order-map.xml" />	
+		<mapper resource="config/mybatis/member-map.xml" />
+		<mapper resource="config/mybatis/path-map.xml" />
+		<mapper resource="config/mybatis/place-map.xml" />
+		<mapper resource="config/mybatis/qna-map.xml" />	
 	</mappers>
 	
 

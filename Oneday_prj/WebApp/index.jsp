@@ -12,17 +12,15 @@
   <!---->
 <div data-vide-bg="video/video">
     <div class="container">
-		<div class="banner-info">
-			<h3>It is a long established fact that a reader will be distracted by 
-			the readable </h3>	
-			<div class="search-form">
-				<form action="#" method="post">
-					<input type="text" placeholder="Search..." name="Search...">
-					<input type="submit" value=" " >
-				</form>
-			</div>		
-		</div>	
-    </div>
+		<ul id="myTab" class="nav nav-tabs" role="tablist">
+		  <li role="presentation" class="dropdown">
+			<a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents">검색 구분 <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+			  <li><a href="#dropdown1" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">장소</a></li>
+			  <li><a href="#dropdown2" tabindex="-1" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">경로</a></li>
+			</ul>
+		  </li>
+		</ul>
 </div>
 
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
