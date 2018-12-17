@@ -25,6 +25,6 @@
 				</div>	
 				</div>
 				<div class="logo">
-				<h1 ><a href="index.jsp">하루이야기<span>www.danglichigi.com</span></a></h1>
+				<h1 ><a href="index.jsp">하루이야기<span>www.dangilchigi.com</span></a></h1>
 			</div>		
 </div>

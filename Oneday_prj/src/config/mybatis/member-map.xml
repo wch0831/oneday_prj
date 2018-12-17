@@ -22,20 +22,19 @@
       <collection property="rlist" resultMap="shopReplyMap"></collection>
    </resultMap> -->
 
-   <resultMap id="orderMap" type="com.jang.order.orderVO">
-      <id property="oSeq" column="o_seq" />
-      <result property="oTitle" column="o_title" />
-      <result property="oRegdate" column="o_regdate" />
-      <result property="oText" column="o_text" />
-      <result property="oPoint" column="o_point" />
-      <result property="oPicture" column="o_picture" />
-      <result property="mSeq" column="m_seq" />
-      <result property="oAddress" column="o_address" />
-      <result property="oLat" column="o_lat" />
-      <result property="oLng" column="o_lng" />
-      <result property="kSeq" column="k_seq" />
-      <result property="orderGubun" column="order_gubun" />
-   </resultMap>
+   
+   <resultMap id="memberMap" type="Member.MemberVO">
+   	<id property="mSeq" column="m_seq" />
+   	<result property="mEmail" column="m_email" />
+   	<result property="mPw" column="m_pw" />
+   	<result property="mName" column="m_name" />
+   	<result property="mNick" column="m_nick" />
+   	<result property="mResnum" column="m_resnum" />
+   	<result property="mGubun" column="m_gubun" />
+   	<result property="mRegdate" column="m_regdate" />
+   	<result property="mDel" column="m_del" />
+   	<result property="mDelate" column="m_deldate" />
+  </resultMap>
    
 <!--    <resultMap id="shopPicMap" type="com.biz.shop.ShopPicVO">
       <id property="pseq" column="pseq" />
@@ -55,12 +54,16 @@
    </resultMap>
  -->
 
-    <sql id="commonSelect">user_name, user_gubun</sql>
+    <sql id="commonSelect">m_email, m_pw</sql>
     
-    <select id="orderAll" resultMap="orderMap">
+    <select id="login" parameterType="Member.MemberVO" resultMap="memberMap">
       select *
       from order_board
     </select>
+    
+    <insert id="register" parameterType="Member.MemberVO">
+    	insert into member values (m_seq.nextval, #{mEmail}, #{mPw}, #{mName}, #{mNick}, #{mResnum}, 'u', sysdate, 'n', null)
+    </insert>
     
    
 </mapper>   

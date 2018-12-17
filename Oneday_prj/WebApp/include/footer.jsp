@@ -44,7 +44,7 @@
 		</div>
 		<div class="clearfix"></div>
 			<div class="footer-bottom">
-				<h2 ><a href="index.jsp">하루 이야기<span>www.danglichigi.com</span></a></h2>
+				<h2 ><a href="index.jsp">하루 이야기<span>www.dangilchigi.com</span></a></h2>
 				<p class="fo-para">하루를 여행해도 엣지있게</p>
 				<div class=" address">
 					<div class="col-md-4 fo-grid1">
