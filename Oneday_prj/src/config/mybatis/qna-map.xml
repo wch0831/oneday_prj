@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  
+<mapper namespace="userNameSpace">
+<mapper namespace="com.biz.mapper">
+ -->
+<mapper namespace="qnaNameSpace">
+
+<!--  <resultMap id="sp_11" type="com.jang.order.orderVO" extends="orderMap">
+      <association property="plist" resultMap="shopPicMap"></association>
+   </resultMap>
+   
+    <resultMap id="sp_1n" type="com.jang.order.orderVO" extends="orderMap">
+       <collection property="plist" resultMap="shopPicMap"></collection>
+   </resultMap>
+   
+    
+   
+    <resultMap id="spr_1nn" type="com.biz.shop.ShopVO" extends="shopMap">
+      <collection property="plist" resultMap="shopPicMap"></collection>
+      <collection property="rlist" resultMap="shopReplyMap"></collection>
+   </resultMap> -->
+
+   <resultMap id="orderMap" type="com.jang.order.orderVO">
+      <id property="oSeq" column="o_seq" />
+      <result property="oTitle" column="o_title" />
+      <result property="oRegdate" column="o_regdate" />
+      <result property="oText" column="o_text" />
+      <result property="oPoint" column="o_point" />
+      <result property="oPicture" column="o_picture" />
+      <result property="mSeq" column="m_seq" />
+      <result property="oAddress" column="o_address" />
+      <result property="oLat" column="o_lat" />
+      <result property="oLng" column="o_lng" />
+      <result property="kSeq" column="k_seq" />
+      <result property="orderGubun" column="order_gubun" />
+   </resultMap>
+   
+<!--    <resultMap id="shopPicMap" type="com.biz.shop.ShopPicVO">
+      <id property="pseq" column="pseq" />
+      <result property="ppath" column="ppath" />
+      <result property="pname" column="pname" />
+      <result property="sysname" column="syspname" />
+      <result property="sseq" column="sseq" />
+      <result property="pchk_yn" column="pchk_yn" /> 
+   </resultMap>
+
+   <resultMap id="shopReplyMap" type="com.biz.shop.ReplyVO">
+      <id property="rseq" column="rseq" />
+      <result property="reply" column="reply" />
+      <result property="regid" column="regid" />
+      <result property="regdate" column="regdate" />
+      <result property="sseq" column="sseq" />
+   </resultMap>
+ -->
+
+    <sql id="commonSelect">user_name, user_gubun</sql>
+    
+    <select id="orderAll" resultMap="orderMap">
+      select *
+      from order_board
+    </select>
+    
+   
+</mapper>   
