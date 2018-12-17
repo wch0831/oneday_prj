@@ -31,7 +31,7 @@
 					</div> 
 					<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 						<ul class="nav navbar-nav ">
-							<li ><a href="index.jsp" class="hyper "><span>Home</span></a></li>	
+							<li class="active"><a href="index.jsp" class="hyper "><span>Home</span></a></li>	
 							
 							<li  class="dropdown ">
 								<a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>테마<b class="caret"></b></span></a>
@@ -177,7 +177,7 @@
 								</ul>
 							</li>
 							<li ><a href="codes.html" class="hyper"> <span>Codes</span></a></li>
-							<li class="active"><a href="contact.html" class="hyper"><span>Contact Us</span></a></li>
+							<li ><a href="contact.html" class="hyper"><span>Contact Us</span></a></li>
 						</ul>
 					</div>
 					</nav>
