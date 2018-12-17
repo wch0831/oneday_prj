@@ -14,7 +14,6 @@
 
 <%@ include file="/include/top.jsp" %>
 
-<br><br>
   <!---->
 
     <!--banner-->
