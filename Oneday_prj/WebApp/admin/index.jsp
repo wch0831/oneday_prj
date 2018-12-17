@@ -342,6 +342,8 @@
     <!-- script -->
      <%@ include file="/admin/include/script.jsp" %>
    
+   
+   <script src="js/dashboard1.js"></script>
     
     <!-- chartist chart -->
     <script src="assets/plugins/chartist-js/dist/chartist.min.js"></script>

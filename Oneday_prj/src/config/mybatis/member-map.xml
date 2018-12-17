@@ -22,27 +22,74 @@
       <collection property="rlist" resultMap="shopReplyMap"></collection>
    </resultMap> -->
 
-   <resultMap id="placeMap" type="com.oneday.place.PlaceVO">
-      <id property="pSeq" column="p_seq" />
-      <result property="pTitle" column="p_title" />
-      <result property="pContent" column="p_content" />
-      <result property="pLat" column="p_lat" />
-      <result property="pLng" column="p_lng" />
-      <result property="pArea" column="p_area" />
-      <result property="pCost" column="p_cost" />
-      <result property="pInout" column="p_inout" />
-      <result property="pPurpose" column="p_purpose" />
-      <result property="mSeq" column="m_seq" />
-      <result property="pRegdate" column="p_regdate" />
-      <result property="pPpath" column="p_ppath" />
-      <result property="pPname" column="p_pname" />
-      <result property="pSysname" column="p_sysname" />
-   </resultMap>
-   
-    <!-- <sql id="commonSelect">user_name, user_gubun</sql> -->
-    
-    <select id="selectPlace" resultMap="placeMap">
-      select * from place
+ <resultMap id="memberMap" type="com.oneday.member.MemberVO">
+   	<id property="mSeq" column="m_seq" />
+   	<result property="mEmail" column="m_email" />
+   	<result property="mPw" column="m_pw" />
+   	<result property="mName" column="m_name" />
+   	<result property="mNick" column="m_nick" />
+   	<result property="mResnum" column="m_resnum" />
+   	<result property="mGubun" column="m_gubun" />
+   	<result property="mRegdate" column="m_regdate" />
+   	<result property="mDel" column="m_del" />
+   	<result property="mDelate" column="m_deldate" />
+  </resultMap>
+
+
+    <sql id="commonSelect">m_email, m_pw</sql>
+
+      
+    <!-- 로그인 -->
+    <select id="member_login" resultMap="placeMap">
+      select * from member 
+      where m_email=#{mEmail} and m_pw=#{mPw} and M_gubun='n' 
     </select>
+    
+    <!-- 회원가입 -->
+    <insert id="member_register" parameterType="Member.MemberVO">
+    	insert into member (m_seq, m_email, m_pw, m_name, m_nick, m_resnum, m_gubun, m_del, m_delate)
+    	values (m_seq.nextval, #{mEmail}, #{mPw}, #{mName}, #{mNick}, #{mResnum}, 'u', sysdate, 'n', null)
+    </insert>
+    
+    <!-- 관리자 회원정보 -->
+    <select id="member_info" parameterType="com.oneday.member.MemberVO" resultMap="memberMap">
+      select * 
+      from member
+      order by e_seq asc
+    </select> 
+    
+    <!-- mylist 회원정보 -->
+    <select id="my_info" parameterType="String" resultMap="memberMap">
+    	select *
+    	from member
+    	where m_email=#{mEmail}
+    </select>
+    
+    <!-- 회원탈퇴 -->
+    <update id="member_del" parameterType="com.oneday.member.MemberVO">
+    	update member
+    	set m_del='y', m_deldate=sysdate
+    	where m_email=#{mEmail} and m_del='n'
+    </update> 
+    
+    <!-- 임시비밀번호 발급 -->
+    <update id="randomPassword" parameterType="com.oneday.member.MemberVO">
+    	update member
+    	set m_pw=#{mPw}
+    	where m_email=#{eMail}
+    </update>
+    
+     <!-- 비밀번호 변경 -->
+    <update id="changePassword" parameterType="com.oneday.member.MemberVO">
+    	update member
+    	set m_pw=#{mPw}
+    	where m_email=#{eMail}
+    </update>
+    
+    <select id="check" parameterType="String">
+    	select m_email, m_nick
+    	from member
+    </select>
+    
    
 </mapper>   
