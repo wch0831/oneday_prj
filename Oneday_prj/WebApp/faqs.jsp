@@ -1,9 +1,6 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,13 +13,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 <%@ include file="/include/top.jsp" %>
+
   <!---->
 
     <!--banner-->
 <div class="banner-top">
 	<div class="container">
-		<h3 >Faqs</h3>
-		<h4><a href="index.html">Home</a><label>/</label>Faqs</h4>
+		<h3 >문의하기</h3>
+		<h4><a href="index.jsp">Home</a><label>/</label>문의하기</h4>
 		<div class="clearfix"> </div>
 	</div>
 </div>
@@ -32,7 +30,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			
 			<div class="spec ">
-			<h3>Faqs</h3>
+			<h3>문의하기</h3>
 				<div class="ser-t">
 					<b></b>
 					<span><i></i></span>
