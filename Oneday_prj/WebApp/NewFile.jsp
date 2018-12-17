@@ -10,7 +10,7 @@
 	$(document).ready(function() {
 		//$("#checkBtn").click(function() {
 		//	todo
-		//});
+		//}); 
 	});
 </script>
 </head>
