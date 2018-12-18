@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  
+<mapper namespace="userNameSpace">
+<mapper namespace="com.biz.mapper">
+ -->
+<!-- <mapper namespace="pathNameSpace">
+</mapper> -->
+
+<!--  <resultMap id="sp_11" type="com.jang.order.orderVO" extends="orderMap">
+      <association property="plist" resultMap="shopPicMap"></association>
+   </resultMap>
+   
+    <resultMap id="sp_1n" type="com.jang.order.orderVO" extends="orderMap">
+       <collection property="plist" resultMap="shopPicMap"></collection>
+   </resultMap>
+   
+    
+   
+    <resultMap id="spr_1nn" type="com.biz.shop.ShopVO" extends="shopMap">
+      <collection property="plist" resultMap="shopPicMap"></collection>
+      <collection property="rlist" resultMap="shopReplyMap"></collection>
+   </resultMap> -->
+
+
+<mapper namespace="reviewSpace">
+<resultMap id="reviewMap" type="com.oneday.review.ReviewVO">
+      <id property="rseq" column="r_seq" />
+      <result property="oseq" column="o_seq" />
+      <result property="mseq" column="m_seq" />
+      <result property="rcontent" column="r_content" />
+      <result property="rregdate" column="r_regdate" />     
+   </resultMap>
+   
+<!--    <resultMap id="shopPicMap" type="com.biz.shop.ShopPicVO">
+      <id property="pseq" column="pseq" />
+      <result property="ppath" column="ppath" />
+      <result property="pname" column="pname" />
+      <result property="sysname" column="syspname" />
+      <result property="sseq" column="sseq" />
+      <result property="pchk_yn" column="pchk_yn" /> 
+   </resultMap>
+
+   <resultMap id="shopReplyMap" type="com.biz.shop.ReplyVO">
+      <id property="rseq" column="rseq" />
+      <result property="reply" column="reply" />
+      <result property="regid" column="regid" />
+      <result property="regdate" column="regdate" />
+      <result property="sseq" column="sseq" />
+   </resultMap>
+ -->
+
+
+
+    <!-- 관리자페이지 댓글 조회  -->
+    <select id="admin_Review_List"
+    	parameterType="com.oneday.review.ReviewVO"
+    	resultMap="reviewMap">
+    		select o.o_seq, r.r_seq, o.o_title, m.m_nick, r.r_content, r.r_regdate from member m, reply r, onepath o
+			where r.m_seq = m.m_seq
+			and o.o_seq = r.o_seq;  	
+    </select>
+    
+    <!-- 관리자페이지 삭제  -->
+    <delete id="admin_Review_del"
+    	parameterType="com.oneday.review.ReviewVO">   	
+    		delete from reply
+			where r_seq=2;  	
+   	</delete>
+  
+    <!-- 사용자 댓글 조회 -->
+     <select id="users_Review_List"
+    	parameterType="com.oneday.review.ReviewVO"
+    	resultMap="reviewMap">
+    		select o.o_seq, m.m_nick, r.r_content, r.r_regdate from reply r, member m, onepath o
+			where r.m_seq = m.m_seq
+			and o.o_seq = r.o_seq
+			and o.o_seq = 2;	
+    </select>
+    
+    <!-- 마이페이지 댓글 조회 -->
+    <select id="my_Review_List"
+    	parameterType="com.oneday.review.ReviewVO"
+    	resultMap="reviewMap">
+    		select o.o_seq, r.r_seq, r.r_content, r.r_regdate from reply r, onepath o, member m
+			where o.o_seq = r.o_seq
+			and m.m_seq = r.r_seq
+			and m.m_seq = 2;	
+    </select>
+    
+    <!-- 마이페이지 댓글 삭제 -->
+     <delete id="my_Review_del"
+    	parameterType="com.oneday.review.ReviewVO">
+   		 delete from reply
+	     where r_seq=2;
+	 </delete>     
+</mapper>   
