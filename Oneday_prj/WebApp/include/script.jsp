@@ -13,7 +13,7 @@
 			easingType: 'linear' 
 			};
 		*/								
-		$().UItoTop({ easingType: 'easeOutQuart' });
+		//$().UItoTop({ easingType: 'easeOutQuart' });
 		});
 	</script>
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>

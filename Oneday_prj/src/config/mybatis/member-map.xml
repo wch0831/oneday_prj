@@ -5,7 +5,7 @@
 <mapper namespace="userNameSpace">
 <mapper namespace="com.biz.mapper">
  -->
-<mapper namespace="qnaNameSpace">
+<mapper namespace="memberNameSpace">
 
 <!--  <resultMap id="sp_11" type="com.jang.order.orderVO" extends="orderMap">
       <association property="plist" resultMap="shopPicMap"></association>
@@ -46,7 +46,7 @@
     </select>
     
     <!-- 회원가입 -->
-    <insert id="member_register" parameterType="Member.MemberVO">
+    <insert id="member_register" parameterType="com.oneday.member.MemberVO">
     	insert into member (m_seq, m_email, m_pw, m_name, m_nick, m_resnum, m_gubun, m_del, m_delate)
     	values (m_seq.nextval, #{mEmail}, #{mPw}, #{mName}, #{mNick}, #{mResnum}, 'u', sysdate, 'n', null)
     </insert>
