@@ -5,7 +5,7 @@
 <mapper namespace="userNameSpace">
 <mapper namespace="com.biz.mapper">
  -->
-<mapper namespace="qnaNameSpace">
+<mapper namespace="memberNameSpace">
 
 <!--  <resultMap id="sp_11" type="com.jang.order.orderVO" extends="orderMap">
       <association property="plist" resultMap="shopPicMap"></association>

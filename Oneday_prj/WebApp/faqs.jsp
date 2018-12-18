@@ -1,11 +1,50 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 
 <%@ include file="/include/header.jsp" %>
+
+<script>
+   $(document).ready(function(){
+	   
+	   function aqa(topn) {
+	
+			$.ajax({ 
+				url:"/faq",   
+				type:"post",
+				contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+				data: "topn="+topn, //크롤링해올 갯수 ---------------
+				resultType:"json",
+				success:function(resObject){
+						console.log(resObject);		//객체
+						var listStr = "";
+			 			$.map(resObject, function(vv, idx){						
+								listStr += "<div class='panel panel-default'>";
+								listStr += "<div class='panel-heading'>";
+								listStr += "<h4 class='panel-title' data-toggle='collapse' data-target='#collapseOne'>";
+								listStr += "<span>" + vv.q_seq + "</span>" + vv.q_title + "";
+								listStr += "</h4>"
+								listStr += "</div>"
+								listStr += "<div id='collapseOne' class='panel-collapse collapse'>";
+								listStr += "<div class='panel-body'>";
+								listStr += "<p>" + vv.q_content + "</p>";						
+								listStr += "</div>";
+								listStr += "</div>";
+								listStr += "</div>";					
+			 	  	});
+			 			$("#ssss").html(listStr);
+				} //end of success
+			}); 
+	  }		
+	
+	
+	aqa(4);	
+});
+   
+</script>
 
 </head>
 <body>
@@ -39,18 +78,8 @@
 			</div>
 				<div class="panel-group" id="accordion">
 				<!-- First Panel -->
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseOne">
-								 <span>1.</span> It is a long established fact that a reader will be distracted ?
-							 </h4>
-						</div>
-						<div id="collapseOne" class="panel-collapse collapse">
-							<div class="panel-body">
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. .</p>
-								<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage.</p>
-							</div>
-						</div>
+					<div class="panel panel-default" id="ssss">
+
 					</div>
 					
 					<!-- Second Panel -->
