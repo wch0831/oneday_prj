@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<script>
+<!-- <script>
 $(document).ready(function(){
 	
 	$.ajax({ 
@@ -38,7 +38,7 @@ $(document).ready(function(){
 	
 });
 
-</script>
+</script> -->
 
 <head>
     <meta charset="utf-8">
@@ -213,7 +213,16 @@ $(document).ready(function(){
                                 <div class="table-responsive">
                                     <table class="table" id="ad_table" name="ad_table">
                                         <thead>
+                                            <c:forEach var="vo" items="${KEY_LIST}">
                                             <tr>
+                                                <th>#</th>
+                                                <th>${vo.rseq}</th>
+                                                <th>${vo.r_content}</th>
+                                                <th>${vo.r_regdate }</th>
+                                            </tr>											
+											</c:forEach>
+                                            
+                                            <!-- <tr>
                                                 <th>#</th>
                                                 <th>First Name</th>
                                                 <th>Last Name</th>
@@ -256,7 +265,7 @@ $(document).ready(function(){
                                                 <td>Nigam</td>
                                                 <td>Eichmann</td>
                                                 <td>@Sonu</td>
-                                            </tr>
+                                            </tr> -->
                                         </tbody>
                                     </table>
                                 </div>
