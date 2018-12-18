@@ -9,30 +9,35 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.biz.shop.ReplyVO;
+
 
 
 
 /**
  * Servlet implementation class admin_reviewServlet
  */
-@WebServlet("/admin_review")
+@WebServlet("/ad_review")
 public class Admin_reviewServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * Default constructor. 
-     */
-    public Admin_reviewServlet() {
-        // TODO Auto-generated constructor stub
-    }
+  
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("assafds");
+		ReviewDAO dao = new ReviewDAO();
+		ArrayList<ReviewVO> list = new ArrayList<ReviewVO>();
+		ReviewVO rvo = new ReviewVO();
+		
+		list = dao.admin_reviewList();
+		
+		
+		request.setAttribute("KEY_LIST", list);	
+		
+		request.getRequestDispatcher("/admin/admin_review.jsp").forward(request, response);
 	}
 
 	/**
@@ -40,10 +45,12 @@ public class Admin_reviewServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		doGet(request,response);
 		
-		ReviewDAO dao = new ReviewDAO();
-		ArrayList list = new ArrayList(); 
-		rvo.setMseq(mseq);	
+		
+		
+		
+		
 		
 		
 		
