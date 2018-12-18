@@ -16,6 +16,7 @@ public class PlaceVO {
 	private String pPpath;
 	private String pPname;
 	private String pSysname;
+	private String pDel;
 	
 	public int getpSeq() {
 		return pSeq;
@@ -100,6 +101,12 @@ public class PlaceVO {
 	}
 	public void setpSysname(String pSysname) {
 		this.pSysname = pSysname;
+	}
+	public String getpDel() {
+		return pDel;
+	}
+	public void setpDel(String pDel) {
+		this.pDel = pDel;
 	}
 		
 }
