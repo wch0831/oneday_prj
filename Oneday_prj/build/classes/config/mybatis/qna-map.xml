@@ -58,8 +58,10 @@
     
 
     <select id="question_select" parameterType="com.oneday.faq.FaqVO" resultMap="qnaMap">
+    <![CDATA[
       select *
       from question
+      ]]>
 	</select>
    
 </mapper>   
