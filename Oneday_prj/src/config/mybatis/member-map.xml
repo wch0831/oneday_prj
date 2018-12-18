@@ -5,7 +5,7 @@
 <mapper namespace="userNameSpace">
 <mapper namespace="com.biz.mapper">
  -->
-<mapper namespace="qnaNameSpace">
+<mapper namespace="member.mapper">
 
 <!--  <resultMap id="sp_11" type="com.jang.order.orderVO" extends="orderMap">
       <association property="plist" resultMap="shopPicMap"></association>
@@ -42,7 +42,7 @@
     <!-- 로그인 -->
     <select id="member_login" resultMap="placeMap">
       select * from member 
-      where m_email=#{mEmail} and m_pw=#{mPw} and M_gubun='n' 
+      where m_email=#{mEmail} and m_pw=#{mPw} and M_gubun='u' 
     </select>
     
     <!-- 회원가입 -->
@@ -55,7 +55,7 @@
     <select id="member_info" parameterType="com.oneday.member.MemberVO" resultMap="memberMap">
       select * 
       from member
-      order by e_seq asc
+      order by m_seq asc
     </select> 
     
     <!-- mylist 회원정보 -->
@@ -85,6 +85,7 @@
     	set m_pw=#{mPw}
     	where m_email=#{eMail}
     </update>
+    
     
     <select id="check" parameterType="String">
     	select m_email, m_nick

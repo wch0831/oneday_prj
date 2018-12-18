@@ -2,4 +2,4 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
- <footer class="footer"> Â© 2017 Material Pro Admin by wrappixel.com </footer>
+ <footer class="footer"> © Since 2018 || Dangilchigi.com </footer>
