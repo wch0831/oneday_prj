@@ -10,7 +10,7 @@ public class reviewDAO {
 		int res = 0;
 		try {
 			conn = MyBatisFactory.getFactory().openSession();
-			res = conn.update("userNameSpace.changePassword",vo);
+			res = conn.update("userNameSpace.changePassword",rvo);
 			conn.commit();
 		}finally {
 			conn.close();
