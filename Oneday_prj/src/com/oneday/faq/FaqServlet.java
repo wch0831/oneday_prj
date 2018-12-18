@@ -37,6 +37,9 @@ public class FaqServlet extends HttpServlet {
     	
 		Gson gson = new Gson();
 		String jsonStr = gson.toJson(list);
+		System.out.println(jsonStr);
+		
+		response.setContentType("application/json; charset=UTF-8");
 		PrintWriter out  = response.getWriter();
 		out.println(jsonStr);
 		
