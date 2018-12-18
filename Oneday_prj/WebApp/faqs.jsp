@@ -50,7 +50,7 @@
 
 </head>
 <body>
-<a href="offer.html"><img src="images/download.png" class="img-head" alt=""></a>
+
 
 
 <%@ include file="/include/top.jsp" %>
