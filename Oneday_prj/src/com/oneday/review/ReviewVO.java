@@ -1,6 +1,6 @@
 package com.oneday.review;
 
-public class reviewVO {
+public class ReviewVO {
 
 	private int rseq;
 	private int oseq;
