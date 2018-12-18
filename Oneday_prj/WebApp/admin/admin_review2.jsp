@@ -211,8 +211,8 @@ $(document).ready(function(){
                                 <h4 class="card-title">Basic Table</h4>
                                 <h6 class="card-subtitle">Add class <code>.table</code></h6>
                                 <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
+                                    <table class="table" id="ad_table" name="ad_table">
+                                        <thead>                                                                                   
                                             <tr>
                                                 <th>#</th>
                                                 <th>First Name</th>
@@ -220,13 +220,17 @@ $(document).ready(function(){
                                                 <th>Username</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
+                                         <tbody>
+                                            <c:forEach var="vo" items="${KEY_LIST}">
+                                                <tr>
                                                 <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                            </tr>
+                                                <td>${vo.rseq}</td>
+                                                <td>${vo.rcontent}</td>
+                                                 <td>2</td> 
+                                                </tr>		
+                                            </c:forEach> 
+                                         </tbody>       
+                                          <!--   </tr>
                                             <tr>
                                                 <td>2</td>
                                                 <td>Deshmukh</td>
@@ -256,8 +260,8 @@ $(document).ready(function(){
                                                 <td>Nigam</td>
                                                 <td>Eichmann</td>
                                                 <td>@Sonu</td>
-                                            </tr>
-                                        </tbody>
+                                            </tr>  -->
+                                        <!-- </tbody> -->
                                     </table>
                                 </div>
                             </div>
