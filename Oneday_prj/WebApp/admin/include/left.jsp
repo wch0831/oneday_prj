@@ -16,7 +16,7 @@
                         </li>
                         
                         
-                        <li> <a class="waves-effect waves-dark" href="/admin_review" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">댓글관리</span></a>
+                        <li> <a class="waves-effect waves-dark" href="/ad_review" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">댓글관리</span></a>
                         </li>
                        
                         
