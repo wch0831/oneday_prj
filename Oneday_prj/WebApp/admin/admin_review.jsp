@@ -212,17 +212,8 @@ $(document).ready(function(){
                                 <h6 class="card-subtitle">Add class <code>.table</code></h6>
                                 <div class="table-responsive">
                                     <table class="table" id="ad_table" name="ad_table">
-                                        <thead>
-                                            <c:forEach var="vo" items="${KEY_LIST}">
+                                        <thead>                                                                                   
                                             <tr>
-                                                <th>#</th>
-                                                <th>${vo.rseq}</th>
-                                                <th>${vo.r_content}</th>
-                                                <th>${vo.r_regdate }</th>
-                                            </tr>											
-											</c:forEach>
-                                            
-                                            <!-- <tr>
                                                 <th>#</th>
                                                 <th>First Name</th>
                                                 <th>Last Name</th>
@@ -230,12 +221,16 @@ $(document).ready(function(){
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                            </tr>
+                                            <c:forEach var="vo" items="${KEY_LIST}">
+                                                <tr>
+                                                <td>1</th>
+                                                <td>${vo.rseq}</th>
+                                                <td>${vo.rcontent}</th>
+                                                <td>${vo.rregdate }</th>
+                                                </tr>		
+                                            </c:forEach> 
+                                         </tbody>      
+                                          <!--   </tr>
                                             <tr>
                                                 <td>2</td>
                                                 <td>Deshmukh</td>
@@ -265,8 +260,8 @@ $(document).ready(function(){
                                                 <td>Nigam</td>
                                                 <td>Eichmann</td>
                                                 <td>@Sonu</td>
-                                            </tr> -->
-                                        </tbody>
+                                            </tr>  -->
+                                        <!-- </tbody> -->
                                     </table>
                                 </div>
                             </div>
