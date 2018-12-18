@@ -212,25 +212,27 @@ $(document).ready(function(){
                                 <h6 class="card-subtitle">Add class <code>.table</code></h6>
                                 <div class="table-responsive">
                                     <table class="table" id="ad_table" name="ad_table">
-                                        <thead>
+                                           <thead>                                         
+                                            <tr>
+                                                <th>#</th>
+                                                <th>d</th>
+                                                <th>s</th>
+                                                <th>d</th>
+                                            </tr>											
+											</thead>
+								
+											<tbody>
                                             <c:forEach var="vo" items="${KEY_LIST}">
                                             <tr>
-                                                <th>#</th>
-                                                <th>${vo.rseq}</th>
-                                                <th>${vo.r_content}</th>
-                                                <th>${vo.r_regdate }</th>
-                                            </tr>											
-											</c:forEach>
-                                            
+                                                <td>#</th>
+                                                <td>${vo.rseq}</td>
+                                                <td>${vo.rcontent}</td>
+                                                <td>${vo.rregdate }</td>                                           
+                                            </tr>                                            
+                                            </c:forEach>
+                                            </tbody>  
+                                        
                                             <!-- <tr>
-                                                <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
                                                 <td>1</td>
                                                 <td>Deshmukh</td>
                                                 <td>Prohaska</td>
@@ -265,8 +267,8 @@ $(document).ready(function(){
                                                 <td>Nigam</td>
                                                 <td>Eichmann</td>
                                                 <td>@Sonu</td>
-                                            </tr> -->
-                                        </tbody>
+                                            </tr> --> -->
+                                         <!-- </tbody>  -->
                                     </table>
                                 </div>
                             </div>

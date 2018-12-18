@@ -13,10 +13,12 @@ public class ReviewDAO {
 		ReviewVO rvo = new ReviewVO();
 		ArrayList<ReviewVO> list = new ArrayList<ReviewVO>();
 		try {
+			System.out.println("in");
 			conn = MyBatisFactory.getFactory().openSession();
 			list = (ArrayList)conn.selectList("reviewSpace.admin_Review_List");
-			conn.commit();
-		}finally {
+		}catch(Exception e) {
+			System.out.println("fail");
+			e.printStackTrace();
 			conn.close();
 		}
 		return list;

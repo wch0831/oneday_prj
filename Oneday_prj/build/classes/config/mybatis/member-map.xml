@@ -32,7 +32,7 @@
    	<result property="mGubun" column="m_gubun" />
    	<result property="mRegdate" column="m_regdate" />
    	<result property="mDel" column="m_del" />
-   	<result property="mDelate" column="m_deldate" />
+   	<result property="mDeldate" column="m_deldate" />
   </resultMap>
 
 
@@ -40,15 +40,15 @@
 
       
     <!-- 로그인 -->
-    <select id="member_login" resultMap="placeMap">
+    <select id="member_login" resultMap="memberMap">
       select * from member 
       where m_email=#{mEmail} and m_pw=#{mPw} and M_gubun='n' 
     </select>
     
     <!-- 회원가입 -->
     <insert id="member_register" parameterType="com.oneday.member.MemberVO">
-    	insert into member (m_seq, m_email, m_pw, m_name, m_nick, m_resnum, m_gubun, m_del, m_delate)
-    	values (m_seq.nextval, #{mEmail}, #{mPw}, #{mName}, #{mNick}, #{mResnum}, 'u', sysdate, 'n', null)
+    	insert into member (m_seq, m_email, m_pw, m_name, m_nick, m_resnum, m_gubun, m_regdate, m_del, m_deldate)
+    	values (7, #{mEmail}, #{mPw}, #{mName}, #{mNick}, #{mResnum}, 'u', sysdate, 'n', null)
     </insert>
     
     <!-- 관리자 회원정보 -->

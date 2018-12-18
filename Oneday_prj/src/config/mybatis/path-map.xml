@@ -57,16 +57,17 @@
     <select id="admin_Review_List"
     	parameterType="com.oneday.review.ReviewVO"
     	resultMap="reviewMap">
-    		select o.o_seq, r.r_seq, o.o_title, m.m_nick, r.r_content, r.r_regdate from member m, reply r, onepath o
+    	    select o.o_seq, r.r_seq, o.o_title, m.m_nick, r.r_content, r.r_regdate from member m, reply r, onepath o
 			where r.m_seq = m.m_seq
-			and o.o_seq = r.o_seq;  	
+			and o.o_seq = r.o_seq;  
+				
     </select>
     
     <!-- 관리자페이지 삭제  -->
     <delete id="admin_Review_del"
     	parameterType="com.oneday.review.ReviewVO">   	
     		delete from reply
-			where r_seq=2;  	
+			where r_seq=2	
    	</delete>
   
     <!-- 사용자 댓글 조회 -->
@@ -76,7 +77,7 @@
     		select o.o_seq, m.m_nick, r.r_content, r.r_regdate from reply r, member m, onepath o
 			where r.m_seq = m.m_seq
 			and o.o_seq = r.o_seq
-			and o.o_seq = 2;	
+			and o.o_seq = 2
     </select>
     
     <!-- 마이페이지 댓글 조회 -->
@@ -86,13 +87,13 @@
     		select o.o_seq, r.r_seq, r.r_content, r.r_regdate from reply r, onepath o, member m
 			where o.o_seq = r.o_seq
 			and m.m_seq = r.r_seq
-			and m.m_seq = 2;	
+			and m.m_seq = 2
     </select>
     
     <!-- 마이페이지 댓글 삭제 -->
      <delete id="my_Review_del"
     	parameterType="com.oneday.review.ReviewVO">
    		 delete from reply
-	     where r_seq=2;
+	     where r_seq=2
 	 </delete>     
 </mapper>   
