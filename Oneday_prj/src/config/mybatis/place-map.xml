@@ -38,6 +38,22 @@
       <result property="pPname" column="p_pname" />
       <result property="pSysname" column="p_sysname" />
    </resultMap>
+ 
+ 
+    <resultMap id="placeHoldMap" type="com.oneday.place.PlaceHoldVO">
+      <id property="hSeq" column="h_seq" />
+      <result property="hTitle" column="h_title" />
+      <result property="hTmapImg" column="h_tmapimg" />
+      <result property="mSeq" column="m_seq" />
+      <result property="hRegdate" column="h_regdate" />
+      <result property="hDel" column="h_del" />
+   </resultMap>
+      
+      
+   
+   
+   
+   
    
     <!-- <sql id="commonSelect">user_name, user_gubun</sql> -->
     
@@ -45,5 +61,21 @@
       select * from place
     </select>
     
+    
+    <insert id="insertPlace" parameterType="com.oneday.place.PlaceHoldVO">
+    insert into place_hold (h_seq,h_title,h_tmapimg
+      ,m_seq,h_regdate,h_del) values(h_seq.nextval,#{h_title}
+      ,#{h_tmapimg},#{m_seq},sysdate,'n')
+    </insert>
+    
+    <update id="member_delete" parameterType="String">   
+    update place_hold set h_del = 'y' where h_seq=#{value} and h_del='n';   
+    </update>
+	    
+	
+	    
+    
+    
+ 			
    
 </mapper>   
