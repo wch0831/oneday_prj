@@ -5,8 +5,9 @@ public class ReviewVO {
 	private int rseq;
 	private int oseq;
 	private int mseq;
-	private String r_content;
-	private String r_regdate;
+	private String rcontent;
+	private String rregdate;
+	
 	public int getRseq() {
 		return rseq;
 	}
@@ -25,17 +26,18 @@ public class ReviewVO {
 	public void setMseq(int mseq) {
 		this.mseq = mseq;
 	}
-	public String getR_content() {
-		return r_content;
+	public String getRcontent() {
+		return rcontent;
 	}
-	public void setR_content(String r_content) {
-		this.r_content = r_content;
+	public void setRcontent(String rcontent) {
+		this.rcontent = rcontent;
 	}
-	public String getR_regdate() {
-		return r_regdate;
+	public String getRregdate() {
+		return rregdate;
 	}
-	public void setR_regdate(String r_regdate) {
-		this.r_regdate = r_regdate;
+	public void setRregdate(String rregdate) {
+		this.rregdate = rregdate;
 	}
+
 	
 }

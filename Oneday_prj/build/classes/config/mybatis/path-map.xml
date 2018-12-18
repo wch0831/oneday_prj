@@ -6,7 +6,7 @@
 <mapper namespace="com.biz.mapper">
  -->
 <mapper namespace="pathNameSpace">
-</mapper>
+
 
 <!--  <resultMap id="sp_11" type="com.jang.order.orderVO" extends="orderMap">
       <association property="plist" resultMap="shopPicMap"></association>
@@ -23,15 +23,14 @@
       <collection property="rlist" resultMap="shopReplyMap"></collection>
    </resultMap> -->
 
-
-<mapper namespace="reviewSpace">
-<resultMap id="reviewMap" type="com.oneday.review.reviewVO">
+	<resultMap id="reviewMap" type="com.oneday.review.ReviewVO">
       <id property="rseq" column="r_seq" />
       <result property="oseq" column="o_seq" />
       <result property="mseq" column="m_seq" />
       <result property="rcontent" column="r_content" />
       <result property="rregdate" column="r_regdate" />     
    </resultMap>
+
    
 <!--    <resultMap id="shopPicMap" type="com.biz.shop.ShopPicVO">
       <id property="pseq" column="pseq" />

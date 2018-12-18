@@ -42,12 +42,8 @@ public class Admin_reviewServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		ReviewDAO dao = new ReviewDAO();
-		ArrayList list = new ArrayList();
-		? 
-		rvo.setMseq(mseq);
-		
-		
-		
+		ArrayList list = new ArrayList(); 
+		rvo.setMseq(mseq);	
 		
 		
 		
