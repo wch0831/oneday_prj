@@ -1,5 +1,6 @@
 package com.oneday.member;
 
+
 public class MemberVO {
 
 	private int m_seq;
@@ -12,7 +13,7 @@ public class MemberVO {
 	private String m_regdate;
 	private String m_del;
 	private String m_deldate;
-	
+
 	public int getM_seq() {
 		return m_seq;
 	}
