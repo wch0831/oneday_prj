@@ -9,22 +9,28 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import com.google.gson.Gson;
 
-
+/**
+ * Servlet implementation class FaqServlet
+ */
 @WebServlet("/faq")
-
 public class FaqServlet extends HttpServlet {
-	
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+
 	}
 
-
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-    	FaqDAO dao = new FaqDAO();
+		System.out.println("하이염");
+	  	FaqDAO dao = new FaqDAO();
     	ArrayList<FaqVO> list = new ArrayList<FaqVO>();
     	
     	list = dao.questionSelect();
@@ -33,7 +39,10 @@ public class FaqServlet extends HttpServlet {
 		String jsonStr = gson.toJson(list);
 		PrintWriter out  = response.getWriter();
 		out.println(jsonStr);
-   
+		
+		//request.setAttribute("KEY_LIST", list);	
+		
+		//request.getRequestDispatcher("faqs.jsp").forward(request, response);
 	}
 
 }

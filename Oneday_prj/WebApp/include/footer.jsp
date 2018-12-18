@@ -27,7 +27,7 @@
 			<ul>
 				<li><a href="shipping.jsp">Shipping</a></li>
 				<li><a href="terms.jsp">Terms & Conditions</a></li>
-				<li><a href="faqs.jsp">Faqs</a></li>
+				<li><a href="faq.jsp">Faqs</a></li>
 				<li><a href="contact.jsp">Contact</a></li>
 				<li><a href="offer.jsp">Online Shopping</a></li>						 
 				 
