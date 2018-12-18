@@ -49,10 +49,7 @@
       <result property="hDel" column="h_del" />
    </resultMap>
       
-      
-   
-   
-   
+
    
    
     <!-- <sql id="commonSelect">user_name, user_gubun</sql> -->
@@ -69,7 +66,7 @@
     </insert>
     
     <update id="member_delete" parameterType="String">   
-    update place_hold set h_del = 'y' where h_seq=#{value} and h_del='n';   
+    update place_hold set h_del = 'y' where h_seq=#{value};   
     </update>
 	    
 	
