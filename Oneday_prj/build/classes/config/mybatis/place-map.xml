@@ -22,6 +22,11 @@
       <collection property="rlist" resultMap="shopReplyMap"></collection>
    </resultMap> -->
 
+ 
+	    
+	    
+	
+
    <resultMap id="placeMap" type="com.oneday.place.PlaceVO">
       <id property="pSeq" column="p_seq" />
       <result property="pTitle" column="p_title" />
@@ -48,26 +53,62 @@
       <result property="hRegdate" column="h_regdate" />
       <result property="hDel" column="h_del" />
    </resultMap>
+   
+   
+   
       
-
+      
+   
+   
+   
    
    
     <!-- <sql id="commonSelect">user_name, user_gubun</sql> -->
     
-    <select id="selectPlace" resultMap="placeMap">
-      select * from place
+    <select id="selectPlacep" parameterType="com.oneday.place.placeVO" resultMap="placeMap">
+    select * from place 
+		where p_purpose = #{pPurpose};
+    </select>
+
+    
+     <select id="selectPlacepa" parameterType="com.oneday.place.placeVO" resultMap="placeMap">
+      select * from place 
+	where p_purpose=#{pPurpose} and p_area =#{pArea} ;
     </select>
     
+     <select id="selectPlacepai" parameterType="com.oneday.place.placeVO" resultMap="placeMap">
+    select * from place
+	where p_purpose=#{pPurpose} and p_area = #{pArea} and p_inout = #{pInout};
+    </select>
     
-    <insert id="insertPlace" parameterType="com.oneday.place.PlaceHoldVO">
+
+    
+    <insert id="insertPlaceHold" parameterType="com.oneday.place.PlaceHoldVO">
     insert into place_hold (h_seq,h_title,h_tmapimg
-      ,m_seq,h_regdate,h_del) values(h_seq.nextval,#{h_title}
-      ,#{h_tmapimg},#{m_seq},sysdate,'n')
+      ,m_seq,h_regdate,h_del) values(h_seq.nextval,#{hTitle}
+      ,#{hTmapImg},#{mSeq},sysdate,'n')
     </insert>
     
-    <update id="member_delete" parameterType="String">   
-    update place_hold set h_del = 'y' where h_seq=#{value};   
+    <update id="deletePlaceHold" parameterType="String">   
+    update place_hold set h_del = 'y' where h_seq=#{value}   
     </update>
+    
+    
+    <insert id="adminInsert" parameterType="com.oneday.place.placeVO">
+	 insert into place() values(183,'맛있는커피집','제주 서귀포시 중앙로 64번길',33.252525,
+	126.333333,'제주도',0,'실외','쇼핑',3,'18/12/15','C:\uploads\place','','');
+	 
+	 
+	 
+	 </insert>
+	    
+	
+	    
+    
+    
+ 			
+   
+</mapper>   
 	    
 	
 	    
