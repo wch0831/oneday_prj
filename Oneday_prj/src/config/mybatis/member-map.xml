@@ -48,14 +48,14 @@
     <!-- 회원가입 -->
     <insert id="member_register" parameterType="com.oneday.member.MemberVO">
     	insert into member (m_seq, m_email, m_pw, m_name, m_nick, m_resnum, m_gubun, m_regdate, m_del, m_deldate)
-    	values (7, #{mEmail}, #{mPw}, #{mName}, #{mNick}, #{mResnum}, 'u', sysdate, 'n', null)
+    	values (8, #{mEmail}, #{mPw}, #{mName}, #{mNick}, #{mResnum}, 'u', sysdate, 'n', null)
     </insert>
     
     <!-- 관리자 회원정보 -->
     <select id="member_info" parameterType="com.oneday.member.MemberVO" resultMap="memberMap">
       select * 
       from member
-      order by e_seq asc
+      order by m_seq asc
     </select> 
     
     <!-- mylist 회원정보 -->

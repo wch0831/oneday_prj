@@ -13,6 +13,7 @@ public class MemberVO {
 	private String mRegdate;
 	private String mDel;
 	private String mDeldate;
+	
 	public int getmSeq() {
 		return mSeq;
 	}

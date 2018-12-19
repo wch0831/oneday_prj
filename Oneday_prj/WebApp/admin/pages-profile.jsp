@@ -1,34 +1,51 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <title>Material Pro Admin Template - The Most Complete & Trusted Bootstrap 4 Admin Template</title>
-    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/colors/blue.css" id="theme" rel="stylesheet">
+<%@ include file="/admin/include/header.jsp" %>
+<script type="text/javascript">
 
+
+$(document).ready(function(){
+	$.ajax({
+		url:"/userInfo",
+		tpye:"GET",
+		success:function(res){
+			console.log(res);
+			var html = "";
+			$.each(res, function(index, vv){
+				html += "<tr><td>" + vv.mSeq + "</td>"
+				html += "<td>"+ vv.mEmail +"</td>"
+				html += "<td>"+ vv.mName +"</td>"
+				html += "<td>"+ vv.mNick +"</td>"
+				html += "<td>"+ vv.mResnum +"</td>"
+				html += "<td>"+ vv.mGubun +"</td>"
+				html += "<td>"+ vv.mRegdate +"</td>"
+				html += "<td>"+ vv.mDel +"</td>"
+				html += "<td>"+ vv.mDeldate +"</td></tr>"
+			})
+			$("#memberTable").html(html);
+		}
+	})	
+	
+})
+	
+</script>
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">
-    <!-- ============================================================== -->
+
     <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
             <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
     </div>
-    <!-- ============================================================== -->
+    
     <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
     <div id="main-wrapper">
         
         
@@ -43,13 +60,9 @@
 	<%@ include file="/admin/include/left.jsp" %>
 	
 	
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
+      
         <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
+        
             <div class="container-fluid">
                 <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
@@ -64,9 +77,8 @@
                     </div>
                    
                 </div>
-                <!-- ============================================================== -->
-                <!-- End Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
+                
+                
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
@@ -92,73 +104,9 @@
                                                 <th>탈퇴일자</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>yhm@naver.com</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Deshmukh</td>
-                                                <td>Gaylord</td>
-                                                <td>@Ritesh</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sanghani</td>
-                                                <td>Gusikowski</td>
-                                                <td>@Govinda</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Roshan</td>
-                                                <td>Rogahn</td>
-                                                <td>@Hritik</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Joshi</td>
-                                                <td>Hickle</td>
-                                                <td>@Maruti</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Nigam</td>
-                                                <td>Eichmann</td>
-                                                <td>@Sonu</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                            </tr>
+                                        <tbody id = "memberTable" name= "memberTable">
+                                           <!-- ajax이용해서 회원테이블 출력 --> 
+                                            
                                         </tbody>
                                     </table>
                                 </div>
