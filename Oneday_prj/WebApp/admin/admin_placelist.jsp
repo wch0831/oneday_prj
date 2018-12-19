@@ -28,6 +28,10 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
+<script>
+
+
+</script>
 
 <body class="fix-header fix-sidebar card-no-border">
     <!-- ============================================================== -->
@@ -152,7 +156,7 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">Google map</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">관리자 장소 리스트</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                             <li class="breadcrumb-item active">Google map</li>
@@ -168,7 +172,84 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-             
+             	               <div class="row">
+                    <!-- column -->
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-block">
+                              
+                                <div class="table-responsive">
+                                   <table class="table" id="ad_table" name="ad_table">
+                                        <thead>                                                                                   
+                                            <tr style="background-color:#D8D8D8" >
+                                                <th></th>
+                                                <th>번호</th>
+                                                <th>이름</th>
+                                                <th>내용</th>
+                                                <th>위도</th>
+                                                <th>경도</th>
+                                                <th>지역</th>
+                                                <th>비용</th>
+                                                <th>실내/외</th>
+                                                <th>목적</th>
+                                                <th>..</th>
+                                            </tr>
+                                        </thead>
+                                         <tbody>
+                                            <c:forEach var="vo" items="${KEY_LIST}">
+                                                <tr>
+	                                                <td></td>
+	                                                <td>${vo.pSeq}</td>
+	                                                <td>${vo.pTitle}</td>
+	                                                <td>${vo.pContent}</td> 
+	                                                <td>${vo.pLat}</td>
+	                                                <td>${vo.pLng}</td>
+	                                                <td>${vo.pArea}</td>
+	                                                <td>${vo.pCost}</td>
+	                                                <td>${vo.pInout}</td>
+	                                                <td>${vo.pPurpose}</td>
+	                                                <td>${vo.pRegdate}</td>
+                                                </tr>		
+                                            </c:forEach> 
+                                         </tbody>       
+                                          <!--   </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Deshmukh</td>
+                                                <td>Gaylord</td>
+                                                <td>@Ritesh</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Sanghani</td>
+                                                <td>Gusikowski</td>
+                                                <td>@Govinda</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Roshan</td>
+                                                <td>Rogahn</td>
+                                                <td>@Hritik</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Joshi</td>
+                                                <td>Hickle</td>
+                                                <td>@Maruti</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Nigam</td>
+                                                <td>Eichmann</td>
+                                                <td>@Sonu</td>
+                                            </tr>  -->
+                                        <!-- </tbody> -->
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
