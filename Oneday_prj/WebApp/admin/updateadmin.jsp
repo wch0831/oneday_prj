@@ -172,10 +172,10 @@ $(document).ready(function(){
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">관리자 장소 리스트</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">관리자 수정 리스트</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">placelist</li>
+                            <li class="breadcrumb-item active">Updateplace</li>
                         </ol>
                     </div>
                          <div  class="col col-xs-6 text-right">
@@ -281,10 +281,9 @@ $(document).ready(function(){
                             </div>
                             <div id="buttonall">
                             <p align="right" >
-                            <input onclick="location='addadmin'" id="insertbutton" type = "button" value="추가"/> 
-                          	<input onclick="location='updateadmin'" id="updatebutton" type = "button" value="수정"/> 
-                          	<input id="deletebutton" type = "button" value="삭제"/> 
+                            <input onclick="location='map-google.jsp'" id="addsbutton" type = "button" value="등록"/> 
                              </p>
+                          	
                              
                                </div>
                         </div>
