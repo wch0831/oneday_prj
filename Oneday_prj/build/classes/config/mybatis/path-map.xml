@@ -34,19 +34,19 @@
    </resultMap>
    
    <resultMap id="memberMap" type="com.oneday.member.MemberVO">
-      <id property="rseq" column="r_seq" />
-      <result property="oseq" column="o_seq" />
-      <result property="mseq" column="m_seq" />
-      <result property="rcontent" column="r_content" />
-      <result property="rregdate" column="r_regdate" />     
+      <id property="rSeq" column="r_seq" />
+      <result property="oSeq" column="o_seq" />
+      <result property="mSeq" column="m_seq" />
+      <result property="rContent" column="r_content" />
+      <result property="rRegdate" column="r_regdate" />     
    </resultMap>
    
    <resultMap id="pathMap" type="com.oneday.onepath.PathVO">
-      <id property="rseq" column="r_seq" />
-      <result property="oseq" column="o_seq" />
-      <result property="mseq" column="m_seq" />
-      <result property="rcontent" column="r_content" />
-      <result property="rregdate" column="r_regdate" />     
+      <id property="rSeq" column="r_seq" />
+      <result property="oSeq" column="o_seq" />
+      <result property="mSeq" column="m_seq" />
+      <result property="rContent" column="r_content" />
+      <result property="rRegdate" column="r_regdate" />     
    </resultMap>
    
 <!--    <resultMap id="shopPicMap" type="com.biz.shop.ShopPicVO">

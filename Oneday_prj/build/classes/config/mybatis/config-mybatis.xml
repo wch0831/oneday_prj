@@ -29,10 +29,11 @@
 	</environments>
 		
 	<mappers>
-		<!-- <mapper resource="config/mybatis/member-map.xml" /> -->
-		<mapper resource="config/mybatis/path-map.xml" />
+		<mapper resource="config/mybatis/member-map.xml" />
+		<!-- <mapper resource="config/mybatis/path-map.xml" />
 		<mapper resource="config/mybatis/place-map.xml" />
-		<mapper resource="config/mybatis/qna-map.xml" />	
+		<mapper resource="config/mybatis/qna-map.xml" /> -->
+			
 	</mappers>
 	
 
