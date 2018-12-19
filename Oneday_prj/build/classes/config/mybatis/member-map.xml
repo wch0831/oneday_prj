@@ -40,9 +40,9 @@
 
       
     <!-- 로그인 -->
-    <select id="member_login" resultMap="memberMap">
+    <select id="member_login" parameterType="com.oneday.member.MemberVO" resultMap="memberMap">
       select * from member 
-      where m_email=#{mEmail} and m_pw=#{mPw} and M_gubun='n' 
+      where m_email=#{mEmail} and m_pw=#{mPw} and m_gubun='n' 
     </select>
     
     <!-- 회원가입 -->
