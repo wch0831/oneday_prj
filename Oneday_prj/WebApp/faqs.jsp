@@ -10,32 +10,14 @@
 <script>
    $(document).ready(function(){
 	   // 에이잭스
-	   qnalist2();	
-	   
-	   $('#contents tr').hide(); // class가 contents인  tr을 모두 감춘다.  펼쳐질 내용을 감춰두기위한 작업
-	   $('#contents').find('.title').parent().show();
-
-
+	   qnalist();
 	   
 	   
-	   $('#contents .title').parent().click(function(){ // class가 title인 td가 속한 tr을 클릭하면 함수 실행
-		  		$('#contents tr').hide(); 
-		   		$('#contents').find('.title').parent().show();
-		  		var tr = $('#contents tr'); 
-		   	    var rindex = $(this).parent().children().index(this); // 클릭한 tr의 인덱스를 찾아 변수에 저장
-		   		for(var i = rindex; i < rindex + 2; i++){ //  클릭한 tr의 다음(1이면 2) tr 인덱스를 찾기위한 작업
-		  		 $(tr[i]).show(); // 찾아낸 인덱스 tr을 보이기위한 작업
-		 	  }
-		   });
-
-	  
-
-	   	   
    });
    
    
-	function qnalist2() {
-			$.ajax({ 
+	function qnalist() {
+			$.ajax({ 	
 			url:"/faq",   
 			type:"post",
 			contentType: "application/x-www-form-urlencoded; charset=UTF-8",
@@ -43,61 +25,49 @@
 			resultType:"json",
 			success:function(resObject){
 					console.log(resObject);		//객체
+					var topListStr = "";
 					var listStr = "";
-		 			$.map(resObject, function(vv, idx){						 
+		 			$.map(resObject, function(vv, idx){			
+		 				
+		 					topListStr += "<div class='panel panel-default'>";
+		 					topListStr += "<div class='panel-heading'>";
+		 					topListStr += "<h4 class='panel-title' data-toggle='collapse' data-target='#collapseOne'>";
+		 					topListStr += "<span>" + vv.qSeq + "</span>" + vv.qTitle + "";
+		 					topListStr += "</h4>"
+		 					topListStr += "</div>"
+		 					topListStr += "<div id='collapseOne' class='panel-collapse collapse'>";
+		 					topListStr += "<div class='panel-body'>";
+		 					topListStr += "<p>" + vv.qContent + "</p>";						
+		 					topListStr += "</div>";
+		 					topListStr += "</div>";
+		 					topListStr += "</div>";	
+		 					
 		 	                listStr += "<tr>";
-		 	                listStr += "<td class='title'>" + vv.qSeq + "</td>";
+		 	                listStr += "<td>" + vv.qSeq + "</td>";
 		 	                listStr += "<td>" + vv.qGubun + "</td>";
 		 	            	listStr += "<td>" + vv.qTitle + "</td>";
 		 	            	listStr += "<td>" + vv.qmSeq + "</td>";
 		 	            	listStr += "<td>" + vv.qRegdate + "</td>";
 		 	            	listStr += "</tr>";
+		 	            	
 		 	            	listStr += "<tr>";
-		 	            	listStr += "<td class='conts'></td>";
+		 	            	listStr += "<td></td>";
 		 	            	listStr += "<td></td>";
 		 	            	listStr += "<td>" + vv.qContent + "</td>";
 		 	            	listStr += "<td></td>";
 		 	            	listStr += "<td></td>";
-		 	            	listStr += "</tr>";			
+		 	            	listStr += "</tr>";		
+		 	            	
+		 	            	
 		 	  	});
-		 			$("#contents").html(listStr);
+		 			$("#topListStr").html(topListStr);
+		 			$("#contents").html(listStr);	 			
+		 			
 			} //end of success
 		});  	
 		
    } 
-
-/* 		function qnalist() {
- 			$.ajax({ 
-				url:"/faq",   
-				type:"post",
-				contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-				data: "nothing", 
-				resultType:"json",
-				success:function(resObject){
-						console.log(resObject);		//객체
-						var listStr = "";
-			 			$.map(resObject, function(vv, idx){						
-								listStr += "<div class='panel panel-default'>";
-								listStr += "<div class='panel-heading'>";
-								listStr += "<h4 class='panel-title' data-toggle='collapse' data-target='#collapseOne'>";
-								listStr += "<span>" + vv.q_seq + "</span>" + vv.q_title + "";
-								listStr += "</h4>"
-								listStr += "</div>"
-								listStr += "<div id='collapseOne' class='panel-collapse collapse'>";
-								listStr += "<div class='panel-body'>";
-								listStr += "<p>" + vv.q_content + "</p>";						
-								listStr += "</div>";
-								listStr += "</div>";
-								listStr += "</div>";					
-			 	  	});
-			 			$("#faqlist").html(listStr);
-				} //end of success
-			});  	
-			
-	   }  */
-	
-	  
-   
+ 
 </script>
 
 </head>
@@ -134,10 +104,9 @@
 				
 				
 				<!-- First Panel --> 
-				<div id="faqlist">
+				<div id="topListStr">
 				
 				</div>
-				
 				
 				
 
@@ -172,7 +141,7 @@
                 <tr>
                   <th>#</th>
                   <th>문의종류</th>
-                  <th>제목</th>
+                  <th width="50%">제목</th>
                   <th>문의자</th>
                   <th>등록일</th>
                 </tr>
@@ -183,6 +152,7 @@
                                     
                 
               </tbody>
+              
             </table>
           </div>
 		</section>
