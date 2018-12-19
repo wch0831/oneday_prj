@@ -5,17 +5,18 @@
 <mapper namespace="qnaNameSpace">
 
    <resultMap id="qnaMap" type="com.oneday.faq.FaqVO">
-      <id property="oSeq" column="o_seq" />
-      <result property="q_seq" column="q_seq" />
-      <result property="qm_seq" column="qm_seq" />
-      <result property="q_gubun" column="q_gubun" />
-      <result property="q_title" column="q_title" />
-      <result property="q_content" column="q_content" />
-      <result property="q_secret" column="q_secret" />
-      <result property="q_regdate" column="q_regdate" />
-      <result property="a_seq" column="a_seq" />
-      <result property="am_seq" column="am_seq" />
-      <result property="a_regdate" column="a_regdate" />
+      <id property="qSeq" column="q_seq" />
+      <result property="qmSeq" column="qm_seq" />
+      <result property="qGubun" column="q_gubun" />
+      <result property="qTitle" column="q_title" />
+      <result property="qContent" column="q_content" />
+      <result property="qSecret" column="q_secret" />
+      <result property="qRegdate" column="q_regdate" />
+      <result property="aSeq" column="a_seq" />
+      <result property="amSeq" column="am_seq" />
+      <result property="aRegdate" column="a_regdate" />
+      <result property="aContent" column="a_content" />
+      
 	</resultMap>
 <!--  <resultMap id="sp_11" type="com.jang.order.orderVO" extends="orderMap">
       <association property="plist" resultMap="shopPicMap"></association>
@@ -59,7 +60,7 @@
 
     <select id="question_select" parameterType="com.oneday.faq.FaqVO" resultMap="qnaMap">
 
-      select q_seq, q_title, q_content
+      select q_seq, q_gubun, q_title, q_regdate, q_content, qm_seq
       from question
       
 	</select>
