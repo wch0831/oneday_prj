@@ -5,8 +5,9 @@
 <mapper namespace="userNameSpace">
 <mapper namespace="com.biz.mapper">
  -->
-<mapper namespace="reviewSpace">  
-   
+<!-- <mapper namespace="pathNameSpace">
+</mapper> -->
+
 <!--  <resultMap id="sp_11" type="com.jang.order.orderVO" extends="orderMap">
       <association property="plist" resultMap="shopPicMap"></association>
    </resultMap>
@@ -14,18 +15,10 @@
     <resultMap id="sp_1n" type="com.jang.order.orderVO" extends="orderMap">
        <collection property="plist" resultMap="shopPicMap"></collection>
    </resultMap> -->
+   
+  <mapper namespace="reviewSpace">  
+   
     
-    <resultMap id="pathMap" type="com.oneday.place.OnepathVO">
-      <id property="oSeq" column="o_seq" />
-      <result property="oTitle" column="o_title" />
-      <result property="oContent" column="o_content" />
-      <result property="oTmapImg" column="o_tmapimg" />
-      <result property="oTheme" column="o_theme" />  
-      <result property="oArea" column="o_area" />
-      <result property="oSee" column="o_see" />
-      <result property="oRegdate" column="o_regdate" />
-    </resultMap>
-
 
 	<resultMap id="reviewMap" type="com.oneday.review.ReviewVO">
       <id property="rSeq" column="r_seq" />
@@ -35,109 +28,64 @@
       <result property="rRegdate" column="r_regdate" />  
       <result property="mNick" column="m_nick" />
       <result property="oTitle" column="o_title" />
-    </resultMap>
-
-
-<!-- 경로검색/조회  -->
-    <select id="pathSelect"
-    	parameterType="com.oneday.place.OnepathVO"
-    	resultMap="pathMap">
-    	    select o_title, o_content, o_see, o_tmapimg from onepath
-			where o_theme=#{oTheme} and o_area=#{oArea} and o_del='n'
-    </select>
-
-<!-- 인기리스트조회/평점순 정렬  -->
-	<select id="admin_Review_List"
-    	parameterType="com.oneday.place.OnepathVO"
-    	resultMap="pathMap">
-    	    select o_title, o_content, o_see, o_tmapimg from onepath
-			where o_theme=#{oTheme} and o_del='n'
-			order by o_see desc
-    </select>
-	
-	<select id="admin_Review_List"
-    	parameterType="com.oneday.place.OnepathVO"
-    	resultMap="pathMap">
-    	    select o_title, o_content, o_see, o_tmapimg from onepath
-			where o_theme=#{oTheme} and o_area=#{oArea} and o_del='n'
-			order by o_see desc
-    </select>
-
-<!-- 최신순 정렬  -->
-	<select id="admin_Review_List"
-    	parameterType="com.oneday.place.OnepathVO"
-    	resultMap="pathMap">
-    	    select o_title, o_content, o_see, o_tmapimg from onepath
-			where o_theme=#{oTheme} and o_area=#{oArea} and o_del='n'
-			order by o_regdate desc
-    </select>
-
-<!-- 목록내 제목 검색  -->
-	<select id="admin_Review_List"
-    	parameterType="com.oneday.place.OnepathVO"
-    	resultMap="pathMap">
-    	    select * from (select o_title, o_content, o_see, o_tmapimg from onepath
-			where o_theme=#{oTheme} and o_area=#{oArea}) b where b.o_title like '%#{oTitle}%'
-    </select>
-
-<!-- 마이페이지-경로조회  -->
-	<select id="admin_Review_List"
-    	parameterType="com.oneday.place.OnepathVO"
-    	resultMap="pathMap">
-			select o_title, o_content, o_see, o_tmapimg from onepath
-			where m_seq=#{mseq}
-    </select>
-
-<!-- 관리자페이지-경로조회  -->
-	<select id="admin_Review_List"
-    	parameterType="com.oneday.place.OnepathVO"
-    	resultMap="pathMap">
-			select o_title, o_content, o_see, o_tmapimg from onepath
-			where o_theme=#{oTheme}
-    </select>
-
-<!-- 경로상세페이지-상세 조회  -->
-	<select id="admin_Review_List"
-    	parameterType="com.oneday.place.OnepathVO"
-    	resultMap="pathMap">
-			select o.o_seq, o.o_title, o.o_content , o.o_tmapimg, m.m_nick, o.o_regdate, p.p_lat, p.p_lng 
-			from onepath o, member m, onepath_place op, place p
-			where o.o_seq=#{oSeq} and o.o_del='n' and op.o_seq=o.o_seq and p.p_seq=op.p_seq and o.m_seq=m.m_seq;
-    </select>
-
-<!-- 경로상세페이지-게시글신고  -->
-	<insert id="" parameterType="com.oneday.place.OnepathVO">
-		insert into onepath_report(m_seq, o_seq) values (#{mSeq},#{oSeq})
-	</insert>
-
-
-<!-- 마이페이지-경로삭제  -->
-	<update id="" parameterType="">
-		update onepath set o_del='y', o_deldate=sysdate
-		where o_seq=#{oSeq} and m_seq=#{mSeq}	
-	</update>
-
-<!-- 관리자페이지-경로삭제  -->
-	<update id="" parameterType="">
-		update onepath set o_del='y', o_deldate=sysdate where o_seq=#{oSeq}
-	</update>
-
-<!-- 마이페이지-경로수정  -->
-	<update id="" parameterType="">
-		update onepath set o_title=#{oTitle}, o_content=#{oContent} where o_seq=#{oSeq} and m_seq=#{mSeq}
-	</update>
-
-
+         
+   </resultMap>
    
+<<<<<<< HEAD
+   <resultMap id="memberMap" type="com.oneday.member.MemberVO">
+      <id property="rSeq" column="r_seq" />
+      <result property="oSeq" column="o_seq" />
+      <result property="mSeq" column="m_seq" />
+      <result property="rContent" column="r_content" />
+      <result property="rRegdate" column="r_regdate" />     
+   </resultMap>
+   
+   <resultMap id="pathMap" type="com.oneday.onepath.PathVO">
+      <id property="rSeq" column="r_seq" />
+      <result property="oSeq" column="o_seq" />
+      <result property="mSeq" column="m_seq" />
+      <result property="rContent" column="r_content" />
+      <result property="rRegdate" column="r_regdate" />     
+   </resultMap>
+=======
+  
+>>>>>>> branch 'master' of https://github.com/wch0831/oneday_prj
+   
+<!--    <resultMap id="shopPicMap" type="com.biz.shop.ShopPicVO">
+      <id property="pseq" column="pseq" />
+      <result property="ppath" column="ppath" />
+      <result property="pname" column="pname" />
+      <result property="sysname" column="syspname" />
+      <result property="sseq" column="sseq" />
+      <result property="pchk_yn" column="pchk_yn" /> 
+   </resultMap>
+
+   <resultMap id="shopReplyMap" type="com.biz.shop.ReplyVO">
+      <id property="rseq" column="rseq" />
+      <result property="reply" column="reply" />
+      <result property="regid" column="regid" />
+      <result property="regdate" column="regdate" />
+      <result property="sseq" column="sseq" />
+   </resultMap>
+ -->
+
+
+
     <!-- 관리자페이지 댓글 조회  -->
     <select id="admin_Review_List"
     	parameterType="com.oneday.review.ReviewVO"
     	resultMap="reviewMap">
     	     select o.o_seq, r.r_seq, o.o_title, m.m_nick, r.r_content, r.r_regdate from member m, reply r, onepath o
-			 where r.m_seq = m.m_seq and o.o_seq = r.o_seq order by o.o_seq, r.r_seq 
+			 where r.m_seq = m.m_seq	and o.o_seq = r.o_seq 
 			<!-- select r_seq, r_content from reply -->
     </select>
-
+    <!-- 관리자페이지 삭제  -->
+    <delete id="admin_Review_del"
+    	parameterType="com.oneday.review.ReviewVO">   	
+    		delete from reply
+			where r_seq=2	
+   	</delete>
+  
     <!-- 사용자 댓글 조회 -->
      <select id="users_Review_List"
     	parameterType="com.oneday.review.ReviewVO"
@@ -157,14 +105,6 @@
 			and m.m_seq = r.r_seq
 			and m.m_seq = 2
     </select>
-
-    <!-- 관리자페이지 삭제  -->
-    <delete id="admin_Review_del"
-    	parameterType="com.oneday.review.ReviewVO">   	
-    		delete from reply
-			where r_seq=2	
-   	</delete>
-  
     
     <!-- 마이페이지 댓글 삭제 -->
      <delete id="my_Review_del"
