@@ -36,7 +36,7 @@
 
     
 
-    <select id="question_select" parameterType="com.oneday.faq.FaqVO" resultMap="qnaMap">
+    <select id="questionSelect" parameterType="com.oneday.faq.FaqVO" resultMap="qnaMap">
       select q_seq, q_gubun, q_title, q_regdate, q_content, qm_seq
       from question   
 	</select>
