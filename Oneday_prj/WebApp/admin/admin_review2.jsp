@@ -4,6 +4,42 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- <script>
+$(document).ready(function(){
+	
+	$.ajax({ 
+		url:"/admin_review",
+		type:"post",
+		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+		data: "MYKEY=",		
+		resultType:"json",
+		success:function(resMap){
+				console.log(resMap);		//객체
+				var htmlStr = "";
+				var pagingStr = resMap.MAP_PAGING;
+				var maplist 	= resMap.MAP_LIST;
+	 			$.map(maplist, function(vv, idx){
+		  		htmlStr += "<li class='media'>";
+	 				htmlStr += "<img class='mr-3 rounded-circle' width='50' src='/cdir/" + vv.shopPicVO.pname + "' alt='"+vv.shopPicVO.pname+"'>";
+	 				htmlStr += "<div class='media-body'>";
+	 				htmlStr += "<div class='float-right'><small>" + vv.distance +  " km </small></div>";
+	 				htmlStr += "<div class='media-title'><a href='/shop_detail?sseq="+vv.sseq+"'>" + vv.sname + "</a></div>";
+	 				htmlStr += "<small>" + vv.sinfo + "</small>";
+	 				htmlStr += "</div>";
+	 				htmlStr += "</li>";
+		  	});
+	 			htmlStr += pagingStr;
+	 			
+	 			//div는 남겨두고 기존 내용만 지우기
+			  $(".list-unstyled.list-unstyled-border").empty();
+	 			$(".list-unstyled.list-unstyled-border").jsp(htmlStr);
+		} //end of success
+	}); 
+	
+});
+
+</script> -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -151,10 +187,10 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">Dashboard</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">Material Icon</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item active">Material Icon</li>
                         </ol>
                     </div>
                     <div class="col-md-7 col-4 align-self-center">
@@ -168,10 +204,66 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-12">
+                    <!-- column -->
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-block">
-                                This is some text within a card block.
+                                <h4 class="card-title">Basic Table</h4>
+                                <h6 class="card-subtitle">Add class <code>.table</code></h6>
+                                <div class="table-responsive">
+                                    <table class="table" id="ad_table" name="ad_table">
+                                        <thead>                                                                                   
+                                            <tr>
+                                                <th>#</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Username</th>
+                                            </tr>
+                                        </thead>
+                                         <tbody>
+                                            <c:forEach var="vo" items="${KEY_LIST}">
+                                                <tr>
+                                                <td>1</td>
+                                                <td>${vo.rseq}</td>
+                                                <td>${vo.rcontent}</td>
+                                                 <td>2</td> 
+                                                </tr>		
+                                            </c:forEach> 
+                                         </tbody>       
+                                          <!--   </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Deshmukh</td>
+                                                <td>Gaylord</td>
+                                                <td>@Ritesh</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Sanghani</td>
+                                                <td>Gusikowski</td>
+                                                <td>@Govinda</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Roshan</td>
+                                                <td>Rogahn</td>
+                                                <td>@Hritik</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Joshi</td>
+                                                <td>Hickle</td>
+                                                <td>@Maruti</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Nigam</td>
+                                                <td>Eichmann</td>
+                                                <td>@Sonu</td>
+                                            </tr>  -->
+                                        <!-- </tbody> -->
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
