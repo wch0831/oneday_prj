@@ -7,6 +7,10 @@ public class ReviewVO {
 	private int mseq;
 	private String rcontent;
 	private String rregdate;
+	private String oTitle;
+	private String mNick;
+	
+	
 	
 	public int getRseq() {
 		return rseq;
