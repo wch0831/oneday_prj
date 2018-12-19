@@ -10,8 +10,6 @@ public class ReviewVO {
 	private String oTitle;
 	private String mNick;
 	
-	
-	
 	public int getRseq() {
 		return rseq;
 	}
@@ -41,6 +39,18 @@ public class ReviewVO {
 	}
 	public void setRregdate(String rregdate) {
 		this.rregdate = rregdate;
+	}
+	public String getoTitle() {
+		return oTitle;
+	}
+	public void setoTitle(String oTitle) {
+		this.oTitle = oTitle;
+	}
+	public String getmNick() {
+		return mNick;
+	}
+	public void setmNick(String mNick) {
+		this.mNick = mNick;
 	}
 
 	
