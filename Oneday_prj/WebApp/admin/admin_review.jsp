@@ -32,7 +32,7 @@ $(document).ready(function(){
 	 			
 	 			//div는 남겨두고 기존 내용만 지우기
 			  $(".list-unstyled.list-unstyled-border").empty();
-	 			$(".list-unstyled.list-unstyled-border").html(htmlStr);
+	 			$(".list-unstyled.list-unstyled-border").jsp(htmlStr);
 		} //end of success
 	}); 
 	
@@ -59,6 +59,7 @@ $(document).ready(function(){
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
+
         <%@ include file="/admin/include/top.jsp" %>
         <!-- ============================================================== -->
         <!-- End Topbar header -->
@@ -66,7 +67,9 @@ $(document).ready(function(){
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
+
         <%@ include file="/admin/include/left.jsp" %>
+
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
@@ -107,8 +110,8 @@ $(document).ready(function(){
                                 <h4 class="card-title">Basic Table</h4>
                                 <h6 class="card-subtitle">Add class <code>.table</code></h6>
                                 <div class="table-responsive">
-                                    <table class="table" id="ad_table" name="ad_table">
-                                        <thead>                                                                                   
+                                    <table class="table">
+                                        <thead>
                                             <tr>
                                                 <th>#</th>
                                                 <th>First Name</th>
@@ -117,16 +120,12 @@ $(document).ready(function(){
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <c:forEach var="vo" items="${KEY_LIST}">
-                                                <tr>
-                                                <td>1</th>
-                                                <td>${vo.rseq}</th>
-                                                <td>${vo.rcontent}</th>
-                                                <td>${vo.rregdate }</th>
-                                                </tr>		
-                                            </c:forEach> 
-                                         </tbody>      
-                                          <!--   </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Deshmukh</td>
+                                                <td>Prohaska</td>
+                                                <td>@Genelia</td>
+                                            </tr>
                                             <tr>
                                                 <td>2</td>
                                                 <td>Deshmukh</td>
@@ -156,8 +155,8 @@ $(document).ready(function(){
                                                 <td>Nigam</td>
                                                 <td>Eichmann</td>
                                                 <td>@Sonu</td>
-                                            </tr>  -->
-                                        <!-- </tbody> -->
+                                            </tr>
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>

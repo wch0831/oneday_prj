@@ -8,10 +8,10 @@
 <!-- header -->
 	<%@ include file="/admin/include/header.jsp" %>
    
-    <link href="assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
-    <link href="assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
-    <link href="assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
-    <link href="assets/plugins/c3-master/c3.min.css" rel="stylesheet">
+    <link href="/admin/assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
+    <link href="/admin/assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
+    <link href="/admin/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+    <link href="/admin/assets/plugins/c3-master/c3.min.css" rel="stylesheet">
 
 </head>
 
@@ -68,6 +68,9 @@
 <!-- left side -->
 
 	<%@ include file="/admin/include/left.jsp" %>
+
+
+
 
         <div class="page-wrapper">
             <div class="container-fluid">
@@ -379,14 +382,14 @@
      <%@ include file="/admin/include/script.jsp" %>
    
    
-   <script src="js/dashboard1.js"></script>
+   <script src="/admin/js/dashboard1.js"></script>
     
     <!-- chartist chart -->
-    <script src="assets/plugins/chartist-js/dist/chartist.min.js"></script>
-    <script src="assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="/admin/assets/plugins/chartist-js/dist/chartist.min.js"></script>
+    <script src="/admin/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
     <!--c3 JavaScript -->
-    <script src="assets/plugins/d3/d3.min.js"></script>
-    <script src="assets/plugins/c3-master/c3.min.js"></script>
+    <script src="/admin/assets/plugins/d3/d3.min.js"></script>
+    <script src="/admin/assets/plugins/c3-master/c3.min.js"></script>
 </body>
 
 </html>

@@ -18,21 +18,20 @@
    
   <mapper namespace="reviewSpace">  
    
-    <resultMap id="spr_1nn" type="com.oneday.review.ReviewVO" extends="reviewMap">
-      <collection property="oTitle" resultMap="pathMap"></collection>
-      <collection property="mNick" resultMap="memberMap"></collection>
-   </resultMap>
-
-
+    
 
 	<resultMap id="reviewMap" type="com.oneday.review.ReviewVO">
-      <id property="rseq" column="r_seq" />
-      <result property="oseq" column="o_seq" />
-      <result property="mseq" column="m_seq" />
-      <result property="rcontent" column="r_content" />
-      <result property="rregdate" column="r_regdate" />     
+      <id property="rSeq" column="r_seq" />
+      <result property="oSeq" column="o_seq" />
+      <result property="mSeq" column="m_seq" />
+      <result property="rContent" column="r_content" />
+      <result property="rRegdate" column="r_regdate" />  
+      <result property="mNick" column="m_nick" />
+      <result property="oTitle" column="o_title" />
+         
    </resultMap>
    
+<<<<<<< HEAD
    <resultMap id="memberMap" type="com.oneday.member.MemberVO">
       <id property="rSeq" column="r_seq" />
       <result property="oSeq" column="o_seq" />
@@ -48,6 +47,9 @@
       <result property="rContent" column="r_content" />
       <result property="rRegdate" column="r_regdate" />     
    </resultMap>
+=======
+  
+>>>>>>> branch 'master' of https://github.com/wch0831/oneday_prj
    
 <!--    <resultMap id="shopPicMap" type="com.biz.shop.ShopPicVO">
       <id property="pseq" column="pseq" />
@@ -72,9 +74,10 @@
     <!-- 관리자페이지 댓글 조회  -->
     <select id="admin_Review_List"
     	parameterType="com.oneday.review.ReviewVO"
-    	resultMap="spr_1nn">
-    	    select o.o_seq, r.r_seq, o.o_title, m.m_nick, r.r_content, r.r_regdate from member m, reply r, onepath o
-			where r.m_seq = m.m_seq	and o.o_seq = r.o_seq
+    	resultMap="reviewMap">
+    	     select o.o_seq, r.r_seq, o.o_title, m.m_nick, r.r_content, r.r_regdate from member m, reply r, onepath o
+			 where r.m_seq = m.m_seq	and o.o_seq = r.o_seq 
+			<!-- select r_seq, r_content from reply -->
     </select>
     <!-- 관리자페이지 삭제  -->
     <delete id="admin_Review_del"

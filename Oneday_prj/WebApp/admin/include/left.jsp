@@ -12,12 +12,12 @@
                         </li>
                         <li> <a class="waves-effect waves-dark" href="pages-profile.jsp" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">회원관리</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="table-basic.jsp" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">하루경로 관리</span></a>
+                        <li> <a class="waves-effect waves-dark" href="/ad_review" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">댓글관리</span></a>
                         </li>
                         
-                        
-                        <li> <a class="waves-effect waves-dark" href="/ad_review" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">댓글관리</span></a>
-                        </li>
+                       
+                       <!--  <li> <a class="waves-effect waves-dark" href="table-basic.jsp" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">하루경로 관리</span></a>
+                        </li> -->
                        
                         
                         
