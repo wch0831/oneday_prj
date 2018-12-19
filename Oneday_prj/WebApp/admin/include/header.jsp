@@ -8,6 +8,6 @@
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title>하루이야기-관리자페이지</title>
-    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/colors/blue.css" id="theme" rel="stylesheet">
+    <link href="/admin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/admin/css/style.css" rel="stylesheet">
+    <link href="/admin/css/colors/blue.css" id="theme" rel="stylesheet">
