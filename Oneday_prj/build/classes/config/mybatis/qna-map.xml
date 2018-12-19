@@ -26,32 +26,10 @@
        <collection property="plist" resultMap="shopPicMap"></collection>
    </resultMap>
    
-    
-   
     <resultMap id="spr_1nn" type="com.biz.shop.ShopVO" extends="shopMap">
       <collection property="plist" resultMap="shopPicMap"></collection>
       <collection property="rlist" resultMap="shopReplyMap"></collection>
    </resultMap> -->
-
-   
-
-<!--    <resultMap id="shopPicMap" type="com.biz.shop.ShopPicVO">
-      <id property="pseq" column="pseq" />
-      <result property="ppath" column="ppath" />
-      <result property="pname" column="pname" />
-      <result property="sysname" column="syspname" />
-      <result property="sseq" column="sseq" />
-      <result property="pchk_yn" column="pchk_yn" /> 
-   </resultMap>
-
-   <resultMap id="shopReplyMap" type="com.biz.shop.ReplyVO">
-      <id property="rseq" column="rseq" />
-      <result property="reply" column="reply" />
-      <result property="regid" column="regid" />
-      <result property="regdate" column="regdate" />
-      <result property="sseq" column="sseq" />
-   </resultMap>
- -->
 
     <!-- <sql id="commonSelect">user_name, user_gubun</sql>  -->
 
@@ -59,10 +37,8 @@
     
 
     <select id="question_select" parameterType="com.oneday.faq.FaqVO" resultMap="qnaMap">
-
       select q_seq, q_gubun, q_title, q_regdate, q_content, qm_seq
-      from question
-      
+      from question   
 	</select>
    
 </mapper>   

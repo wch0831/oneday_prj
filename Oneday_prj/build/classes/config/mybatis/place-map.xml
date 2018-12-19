@@ -21,11 +21,7 @@
       <collection property="plist" resultMap="shopPicMap"></collection>
       <collection property="rlist" resultMap="shopReplyMap"></collection>
    </resultMap> -->
-
  
-	    
-	    
-	
 
    <resultMap id="placeMap" type="com.oneday.place.PlaceVO">
       <id property="pSeq" column="p_seq" />
@@ -56,61 +52,53 @@
    </resultMap>
    
    
-   
-      
-      
-   
-   
-   
-   
-   
     <!-- <sql id="commonSelect">user_name, user_gubun</sql> -->
     
     <!-- 목적만 -->
     <select id="selectPlacep" parameterType="com.oneday.place.PlaceVO" resultMap="placeMap">
-    select * from place 
+    	select * from place 
 		where p_purpose = #{pPurpose};
     </select>
 
     <!-- 목적과 지역만 -->
      <select id="selectPlacepa" parameterType="com.oneday.place.PlaceVO" resultMap="placeMap">
-      select * from place 
-	where p_purpose=#{pPurpose} and p_area =#{pArea} ;
+	     select * from place 
+		 where p_purpose=#{pPurpose} and p_area =#{pArea} ;
     </select>
     
     <!--목적과 지역과 장소  -->
      <select id="selectPlacepai" parameterType="com.oneday.place.PlaceVO" resultMap="placeMap">
-    select * from place
-	where p_purpose=#{pPurpose} and p_area = #{pArea} and p_inout = #{pInout};
+	    select * from place
+		where p_purpose=#{pPurpose} and p_area = #{pArea} and p_inout = #{pInout};
     </select>
     
 
     <!-- 장소담기  -->
     <insert id="insertPlaceHold" parameterType="com.oneday.place.PlaceHoldVO">
-    insert into place_hold (h_seq,h_title,h_tmapimg
-      ,m_seq,h_regdate,h_del) values(h_seq.nextval,#{hTitle}
-      ,#{hTmapImg},#{mSeq},sysdate,'n')
+	    insert into place_hold (h_seq,h_title,h_tmapimg
+	    ,m_seq,h_regdate,h_del) values(h_seq.nextval,#{hTitle}
+	    ,#{hTmapImg},#{mSeq},sysdate,'n')
     </insert>
     
     <!--장소담기 삭제  -->
     <update id="deletePlaceHold" parameterType="String">   
-    update place_hold set h_del = 'y' where h_seq=#{value}   
+    	update place_hold set h_del = 'y' where h_seq=#{value}   
     </update>
     
     <!--관리자 장소 입력  -->
     <insert id="adminInsert" parameterType="com.oneday.place.PlaceVO">
-	 insert into place(p_seq,p_title,p_content,p_lat,p_lng,p_area,p_cost,
-	 p_inout,p_purpose,m_seq,p_regdate,p_ppath,p_pname,p_sysname,p_del) 
-	 values(p_seq.nextval,#{pTitle},#{pContent},#{pLat},
-	#{pLng},#{pArea},#{pCost},#{pInout},#{pPurpose},#{mSeq},sysdate,#{pPpath},#{pPname},#{pSysname},'n');
+		 insert into place(p_seq,p_title,p_content,p_lat,p_lng,p_area,p_cost,
+		 p_inout,p_purpose,m_seq,p_regdate,p_ppath,p_pname,p_sysname,p_del) 
+		 values(p_seq.nextval,#{pTitle},#{pContent},#{pLat},
+		#{pLng},#{pArea},#{pCost},#{pInout},#{pPurpose},#{mSeq},sysdate,#{pPpath},#{pPname},#{pSysname},'n');
 	 </insert>
 	 
 	 <!--관리자 장소 수정  -->
 	 <update id="adminUpdate" parameterType="com.oneday.place.PlaceVO">   
-    update place set p_title=#{pTitle}, p_content=#{pContent}
-,p_lat=#{pLat} ,p_lng=#{pLng} , p_area=#{pArea} , p_cost=#{pCost}
-,p_inout = #{pInout} , p_purpose = #{pPurpose} , sysdate 
-,p_ppath = #{pPpath},p_pname=#{pPname}, p_sysname=#{pSysname}  where p_seq=#{pSeq} ;  
+    	update place set p_title=#{pTitle}, p_content=#{pContent}
+		,p_lat=#{pLat} ,p_lng=#{pLng} , p_area=#{pArea} , p_cost=#{pCost}
+		,p_inout = #{pInout} , p_purpose = #{pPurpose} , sysdate 
+		,p_ppath = #{pPpath},p_pname=#{pPname}, p_sysname=#{pSysname}  where p_seq=#{pSeq} ;  
     </update>
     
     <!--관리자 장소 삭제  -->
@@ -118,20 +106,7 @@
 		 update place set p_del = 'y' where p_seq=#{value} 
     </update>
 
-	
-	
-	    
-	
-	    
-    
-    
- 			
    
-
-	    
-	
-	    
-    
     
  			
    </mapper> 

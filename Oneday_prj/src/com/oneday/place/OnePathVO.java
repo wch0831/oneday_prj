@@ -10,6 +10,7 @@ public class OnePathVO {
 	private int mSeq;
 	private int oSee;
 	private String oRegdate;
+	private String oDel;
 	
 	public int getoSeq() {
 		return oSeq;

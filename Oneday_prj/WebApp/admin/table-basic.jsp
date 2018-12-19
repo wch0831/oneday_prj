@@ -181,48 +181,16 @@
                                          <tbody>
                                             <c:forEach var="vo" items="${KEY_LIST}">
                                                 <tr>
-                                                <td><input type='checkbox' name='rseq' value='vvv'/>d</td>
-                                                <td>${vo.oSeq}</td>
-                                                <td>${vo.rSeq}</td>
-                                                <td>${vo.oTitle}</td>
-                                                <td>${vo.mNick}</td>
-                                                 <td>${vo.rContent}</td>
-                                                 <td>${vo.rRegdate}</td> 
+	                                                <td><input type="checkbox"></td>
+	                                                <td>${vo.oSeq}</td>
+	                                                <td>${vo.rSeq}</td>
+	                                                <td>${vo.oTitle}</td>
+	                                                <td>${vo.mNick}</td>
+	                                                <td>${vo.rContent}</td>
+	                                                <td>${vo.rRegdate}</td> 
                                                 </tr>		
                                             </c:forEach> 
-                                         </tbody>       
-                                          <!--   </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Deshmukh</td>
-                                                <td>Gaylord</td>
-                                                <td>@Ritesh</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sanghani</td>
-                                                <td>Gusikowski</td>
-                                                <td>@Govinda</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Roshan</td>
-                                                <td>Rogahn</td>
-                                                <td>@Hritik</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Joshi</td>
-                                                <td>Hickle</td>
-                                                <td>@Maruti</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Nigam</td>
-                                                <td>Eichmann</td>
-                                                <td>@Sonu</td>
-                                            </tr>  -->
-                                        <!-- </tbody> -->
+                                         </tbody>
                                     </table>
                                 </div>
                             </div>
