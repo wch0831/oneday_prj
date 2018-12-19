@@ -2,43 +2,43 @@ package com.oneday.review;
 
 public class ReviewVO {
 
-	private int rseq;
-	private int oseq;
-	private int mseq;
-	private String rcontent;
-	private String rregdate;
+	private int rSeq;
+	private int oSeq;
+	private int mSeq;
+	private String rContent;
+	private String rRegdate;
 	private String oTitle;
 	private String mNick;
 	
-	public int getRseq() {
-		return rseq;
+	public int getrSeq() {
+		return rSeq;
 	}
-	public void setRseq(int rseq) {
-		this.rseq = rseq;
+	public void setrSeq(int rSeq) {
+		this.rSeq = rSeq;
 	}
-	public int getOseq() {
-		return oseq;
+	public int getoSeq() {
+		return oSeq;
 	}
-	public void setOseq(int oseq) {
-		this.oseq = oseq;
+	public void setoSeq(int oSeq) {
+		this.oSeq = oSeq;
 	}
-	public int getMseq() {
-		return mseq;
+	public int getmSeq() {
+		return mSeq;
 	}
-	public void setMseq(int mseq) {
-		this.mseq = mseq;
+	public void setmSeq(int mSeq) {
+		this.mSeq = mSeq;
 	}
-	public String getRcontent() {
-		return rcontent;
+	public String getrContent() {
+		return rContent;
 	}
-	public void setRcontent(String rcontent) {
-		this.rcontent = rcontent;
+	public void setrContent(String rContent) {
+		this.rContent = rContent;
 	}
-	public String getRregdate() {
-		return rregdate;
+	public String getrRegdate() {
+		return rRegdate;
 	}
-	public void setRregdate(String rregdate) {
-		this.rregdate = rregdate;
+	public void setrRegdate(String rRegdate) {
+		this.rRegdate = rRegdate;
 	}
 	public String getoTitle() {
 		return oTitle;
@@ -52,6 +52,8 @@ public class ReviewVO {
 	public void setmNick(String mNick) {
 		this.mNick = mNick;
 	}
+	
+	
 
 	
 }

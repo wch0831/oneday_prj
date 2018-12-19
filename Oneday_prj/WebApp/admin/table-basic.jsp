@@ -12,9 +12,9 @@
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title>Material Pro Admin Template - The Most Complete & Trusted Bootstrap 4 Admin Template</title>
-    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./css/style.css" rel="stylesheet">
-    <link href="./css/colors/blue.css" id="theme" rel="stylesheet">
+    <link href="/admin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/admin/css/style.css" rel="stylesheet">
+    <link href="/admin/css/colors/blue.css" id="theme" rel="stylesheet">
 
 </head>
 
@@ -45,13 +45,13 @@
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                            
                             <!-- Light Logo icon -->
-                            <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            <img src="/admin/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
                          
                          <!-- Light Logo text -->    
-                         <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                         <img src="/admin/assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -169,19 +169,25 @@
                                    <table class="table" id="ad_table" name="ad_table">
                                         <thead>                                                                                   
                                             <tr>
-                                                <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
+                                            	<th>체크</th>
+                                                <th><b>게시글번호</th>
+                                                <th><b>댓글번호</th>
+                                                <th><b>게시글제목</th>
+                                                <th><b>닉네임</th>
+                                                <th><b>댓글내용</th>
+                                                <th><b>등록일자</th>
                                             </tr>
                                         </thead>
                                          <tbody>
                                             <c:forEach var="vo" items="${KEY_LIST}">
                                                 <tr>
-                                                <td>1</td>
-                                                <td>${vo.rseq}</td>
-                                                <td>${vo.rcontent}</td>
-                                                 <td>${vo.rregdate}</td> 
+                                                <td><input type='checkbox' name='rseq' value='vvv'/>d</td>
+                                                <td>${vo.oSeq}</td>
+                                                <td>${vo.rSeq}</td>
+                                                <td>${vo.oTitle}</td>
+                                                <td>${vo.mNick}</td>
+                                                 <td>${vo.rContent}</td>
+                                                 <td>${vo.rRegdate}</td> 
                                                 </tr>		
                                             </c:forEach> 
                                          </tbody>       
@@ -250,20 +256,20 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <script src="/admin/assets/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="assets/plugins/bootstrap/js/tether.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/admin/assets/plugins/bootstrap/js/tether.min.js"></script>
+    <script src="/admin/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="js/jquery.slimscroll.js"></script>
+    <script src="/admin/js/jquery.slimscroll.js"></script>
     <!--Wave Effects -->
-    <script src="js/waves.js"></script>
+    <script src="/admin/js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="js/sidebarmenu.js"></script>
+    <script src="/admin/js/sidebarmenu.js"></script>
     <!--stickey kit -->
-    <script src="assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="/admin/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
-    <script src="js/custom.min.js"></script>
+    <script src="/admin/js/custom.min.js"></script>
 </body>
 
 </html>

@@ -9,12 +9,64 @@
 
 <script>
    $(document).ready(function(){
+	   // 에이잭스
+	   qnalist2();	
 	   
-	qnalist();	
+	   $('#contents tr').hide(); // class가 contents인  tr을 모두 감춘다.  펼쳐질 내용을 감춰두기위한 작업
+	   $('#contents').find('.title').parent().show();
+
+
 	   
 	   
+	   $('#contents .title').parent().click(function(){ // class가 title인 td가 속한 tr을 클릭하면 함수 실행
+		  		$('#contents tr').hide(); 
+		   		$('#contents').find('.title').parent().show();
+		  		var tr = $('#contents tr'); 
+		   	    var rindex = $(this).parent().children().index(this); // 클릭한 tr의 인덱스를 찾아 변수에 저장
+		   		for(var i = rindex; i < rindex + 2; i++){ //  클릭한 tr의 다음(1이면 2) tr 인덱스를 찾기위한 작업
+		  		 $(tr[i]).show(); // 찾아낸 인덱스 tr을 보이기위한 작업
+		 	  }
+		   });
+
+	  
+
+	   	   
    });
-	   function qnalist() {
+   
+   
+	function qnalist2() {
+			$.ajax({ 
+			url:"/faq",   
+			type:"post",
+			contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+			data: "nothing", 
+			resultType:"json",
+			success:function(resObject){
+					console.log(resObject);		//객체
+					var listStr = "";
+		 			$.map(resObject, function(vv, idx){						 
+		 	                listStr += "<tr>";
+		 	                listStr += "<td class='title'>" + vv.qSeq + "</td>";
+		 	                listStr += "<td>" + vv.qGubun + "</td>";
+		 	            	listStr += "<td>" + vv.qTitle + "</td>";
+		 	            	listStr += "<td>" + vv.qmSeq + "</td>";
+		 	            	listStr += "<td>" + vv.qRegdate + "</td>";
+		 	            	listStr += "</tr>";
+		 	            	listStr += "<tr>";
+		 	            	listStr += "<td class='conts'></td>";
+		 	            	listStr += "<td></td>";
+		 	            	listStr += "<td>" + vv.qContent + "</td>";
+		 	            	listStr += "<td></td>";
+		 	            	listStr += "<td></td>";
+		 	            	listStr += "</tr>";			
+		 	  	});
+		 			$("#contents").html(listStr);
+			} //end of success
+		});  	
+		
+   } 
+
+/* 		function qnalist() {
  			$.ajax({ 
 				url:"/faq",   
 				type:"post",
@@ -42,7 +94,7 @@
 				} //end of success
 			});  	
 			
-	   } 
+	   }  */
 	
 	  
    
@@ -108,7 +160,38 @@
 					</div>
 					
 					
+		<!-- 일반 문의 게시글 테이블 -->
+		<section id="tables">
+          <div class="page-header">
+            <h3 class="bars">Tables</h3>
+          </div>
+
+          <div class="bs-docs-example">
+            <table class="table table-hover">
+              <thead>	
+                <tr>
+                  <th>#</th>
+                  <th>문의종류</th>
+                  <th>제목</th>
+                  <th>문의자</th>
+                  <th>등록일</th>
+                </tr>
+              </thead>
+              
+              
+              <tbody id="contents">
+                                    
+                
+              </tbody>
+            </table>
+          </div>
+		</section>
+					
 				</div>
+
+				
+				
+				
 		</div>	
 	</div>
 	<!-- // Terms of use -->
