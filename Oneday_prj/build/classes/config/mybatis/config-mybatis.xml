@@ -33,11 +33,7 @@
 		<mapper resource="config/mybatis/path-map.xml" />
 		<mapper resource="config/mybatis/place-map.xml" />
 		<mapper resource="config/mybatis/qna-map.xml" />
-<<<<<<< HEAD
 		<mapper resource="config/mybatis/review-map.xml" />	
-=======
-			
->>>>>>> branch 'master' of https://github.com/wch0831/oneday_prj
 	</mappers>
 	
 
