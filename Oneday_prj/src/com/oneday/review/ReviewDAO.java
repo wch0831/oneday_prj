@@ -15,7 +15,7 @@ public class ReviewDAO {
 		try {
 			System.out.println("in");
 			conn = MyBatisFactory.getFactory().openSession();
-			list = (ArrayList)conn.selectList("reviewSpace.admin_Review_List");
+			list = (ArrayList)conn.selectList("reviewNameSpace.admin_Review_List");
 		}catch(Exception e) {
 			System.out.println("fail");
 			e.printStackTrace();
@@ -31,7 +31,7 @@ public class ReviewDAO {
 		int res = 0;
 		try {
 			conn = MyBatisFactory.getFactory().openSession();			
-			res = conn.delete("reviewSpace.admin_Review_del",rvo);
+			res = conn.delete("reviewNameSpace.admin_Review_del",rvo);
 			conn.commit();
 		}finally {
 			conn.close();
@@ -45,7 +45,7 @@ public class ReviewDAO {
 		
 		try {
 			conn = MyBatisFactory.getFactory().openSession();
-			rvo = conn.selectOne("reviewSpace.my_Review_List",rvo);
+			rvo = conn.selectOne("reviewNameSpace.my_Review_List",rvo);
 			conn.commit();
 		}finally {
 			conn.close();
@@ -59,7 +59,7 @@ public class ReviewDAO {
 		int res = 0;
 		try {
 			conn = MyBatisFactory.getFactory().openSession();			
-			res = conn.delete("reviewSpace.my_Review_del",rvo);
+			res = conn.delete("reviewNameSpace.my_Review_del",rvo);
 			conn.commit();
 		}finally {
 			conn.close();
@@ -72,7 +72,7 @@ public class ReviewDAO {
 		
 		try {
 			conn = MyBatisFactory.getFactory().openSession();
-			rvo = conn.selectOne("reviewSpace.users_Review_List",rvo);
+			rvo = conn.selectOne("reviewNameSpace.users_Review_List",rvo);
 			conn.commit();
 		}finally {
 			conn.close();
