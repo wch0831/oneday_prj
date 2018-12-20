@@ -7,7 +7,8 @@
 
 <head>
 <%@ include file="/admin/include/header.jsp" %>
-<script type="text/javascript">
+
+<script>
 
 
 $(document).ready(function(){

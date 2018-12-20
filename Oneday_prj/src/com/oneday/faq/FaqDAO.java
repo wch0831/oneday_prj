@@ -16,7 +16,7 @@ public class FaqDAO {
 		
 		try { 
 			conn = MyBatisFactory.getFactory().openSession();
-			list = (ArrayList)conn.selectList("qnaNameSpace.question_select");
+			list = (ArrayList)conn.selectList("qnaNameSpace.questionSelect");
 		} finally {
 			conn.close();
 		}

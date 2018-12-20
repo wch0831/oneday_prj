@@ -49,5 +49,21 @@ public class MemberDAO {
 		return list;
 	}
 	
+	public MemberVO loginselect(MemberVO mvo) {
+		SqlSession conn = null;
+		MemberVO vo = new MemberVO();
+
+		try {
+		conn = MyBatisFactory.getFactory().openSession();
+		vo = conn.selectOne("memberNameSpace.member_login", mvo);
+		conn.commit();
+		} catch(Exception e){
+			e.getStackTrace();
+		}finally {
+			conn.close();
+		}
+		return vo;
+	}
+	
 	
 }

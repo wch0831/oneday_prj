@@ -21,17 +21,33 @@
     <link href="css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="css/colors/blue.css" id="theme" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-</head>
 <script>
-
+$(document).ready(function(){
+	$("#gumbtn").click(function(){
+		var search = $("#search").val();
+		console.log(search);
+		var gum = $("#gum").val();
+		console.log(gum);
+	});
+	$("#deletebutton").click(function(){
+		alert("삭제하시겠습니까?");
+	})
+	
+});
+		
 
 </script>
+
+</head>
+
+
 
 <body class="fix-header fix-sidebar card-no-border">
     <!-- ============================================================== -->
@@ -156,15 +172,28 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">관리자 장소 리스트</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">관리자 수정 리스트</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Google map</li>
+                            <li class="breadcrumb-item active">Updateplace</li>
                         </ol>
                     </div>
-                    <div class="col-md-7 col-4 align-self-center">
-                        <a href="https://themewagon.com/themes/material-bootstrap-4-free-admin-template/" class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down">Download Now</a>
-                    </div>
+                         <div  class="col col-xs-6 text-right">
+						
+						<div  class="col col-xs-6 text-right">
+						<select id="search" name="search">
+   						<option value="">search</option>
+    					<option value="주소">주소</option>
+    					<option value="목적">목적</option>
+    					<option value="실내/실외">실내/실외</option>
+						</select>
+						
+						<input type = "text" id="gum" placeholder="검색어">
+						<button id="gumbtn">검색</button>
+						</div>
+						</div>
+   						
+                   
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Bread crumb and right sidebar toggle -->
@@ -182,7 +211,7 @@
                                    <table class="table" id="ad_table" name="ad_table">
                                         <thead>                                                                                   
                                             <tr style="background-color:#D8D8D8" >
-                                                <th></th>
+                                                <th><th>
                                                 <th>번호</th>
                                                 <th>이름</th>
                                                 <th>내용</th>
@@ -192,7 +221,7 @@
                                                 <th>비용</th>
                                                 <th>실내/외</th>
                                                 <th>목적</th>
-                                                <th>..</th>
+                                                <th>날짜</th>
                                             </tr>
                                         </thead>
                                          <tbody>
@@ -212,7 +241,7 @@
                                                 </tr>		
                                             </c:forEach> 
                                          </tbody>       
-                                          <!--   </tr>
+                             <!--           <tbody>
                                             <tr>
                                                 <td>2</td>
                                                 <td>Deshmukh</td>
@@ -238,18 +267,30 @@
                                                 <td>@Maruti</td>
                                             </tr>
                                             <tr>
-                                                <td>6</td>
+                                                <td>6</td>s
                                                 <td>Nigam</td>
                                                 <td>Eichmann</td>
                                                 <td>@Sonu</td>
-                                            </tr>  -->
-                                        <!-- </tbody> -->
+                                            </tr>  
+                                         </tbody>  -->
                                     </table>
                                 </div>
+                                </div>
+                             
+                                
                             </div>
+                            <div id="buttonall">
+                            <p align="right" >
+                            <input onclick="location='map-google.jsp'" id="addsbutton" type = "button" value="등록"/> 
+                             </p>
+                          	
+                             
+                               </div>
                         </div>
                     </div>
                 </div>
+                                
+                                
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
