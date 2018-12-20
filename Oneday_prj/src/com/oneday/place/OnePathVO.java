@@ -11,6 +11,7 @@ public class OnePathVO {
 	private int oSee;
 	private String oRegdate;
 	private String oDel;
+	private String oDeldate;
 	
 	public int getoSeq() {
 		return oSeq;
@@ -66,6 +67,16 @@ public class OnePathVO {
 	public void setoRegdate(String oRegdate) {
 		this.oRegdate = oRegdate;
 	}
-	
-	
+	public String getoDel() {
+		return oDel;
+	}
+	public void setoDel(String oDel) {
+		this.oDel = oDel;
+	}
+	public String getoDeldate() {
+		return oDeldate;
+	}
+	public void setoDeldate(String oDeldate) {
+		this.oDeldate = oDeldate;
+	}
 }
